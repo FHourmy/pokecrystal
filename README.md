@@ -13,7 +13,6 @@ It builds the following ROMs:
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
 
-
 ## See also
 
 - [**FAQ**](FAQ.md)
@@ -31,3 +30,7 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 [symbols]: https://github.com/pret/pokecrystal/tree/symbols
 [ci]: https://github.com/pret/pokecrystal/actions
 [ci-badge]: https://github.com/pret/pokecrystal/actions/workflows/main.yml/badge.svg
+
+## features added :
+
+https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system
