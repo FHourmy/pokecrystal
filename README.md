@@ -34,5 +34,6 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 ## features added :
 
 https://github.com/pret/pokecrystal/wiki/Removing-the-intro
+https://github.com/pret/pokecrystal/wiki/Running-Shoes
 https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system
 https://github.com/pret/pokecrystal/wiki/Allow-more-trainer-parties,-with-individual-DVs,-stat-experience,-nicknames,-variable-teams,-etc
