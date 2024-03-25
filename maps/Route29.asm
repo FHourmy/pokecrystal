@@ -1,5 +1,6 @@
 	object_const_def
 	const ROUTE29_COOLTRAINER_M1
+	const ROUTE29_ARTHUR1
 	const ROUTE29_YOUNGSTER
 	const ROUTE29_TEACHER1
 	const ROUTE29_FRUIT_TREE
@@ -412,6 +413,39 @@ Route29Sign2Text:
 	line "NEW BARK TOWN"
 	done
 
+TrainerShinyHunterArthur:
+	trainer SHINYHUNTER, ARTHUR1, EVENT_BEAT_SHINYHUNTER_ARTHUR1, ShinyHunterArthur1SeenText, ShinyHunterArthur1BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ShinyHunterArthur1BeatenText
+	waitbutton
+	closetext
+	setevent EVENT_ROUTE_29_SHINYHUNTER_ARTHUR
+	end
+
+ShinyHunterArthur1SeenText:
+	text "Did you know"
+	line "that some rare"
+	cont "#MON"
+
+	para "are a different"
+	line "colour ?"
+
+	para "I've waited"
+	line "days for"
+	cont "mine !"
+	done
+
+ShinyHunterArthur1BeatenText:
+	text "It's ok to"
+	line "lose,"
+
+  para "my #MON looks"
+	line "so cool !"
+	done
+
 Route29_MapEvents:
 	db 0, 0 ; filler
 
@@ -428,6 +462,7 @@ Route29_MapEvents:
 
 	def_object_events
 	object_event 50, 12, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CatchingTutorialDudeScript, -1
+	object_event 43, 14, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerShinyHunterArthur, EVENT_ROUTE_29_SHINYHUNTER_ARTHUR
 	object_event 27, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29YoungsterScript, -1
 	object_event 15, 11, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route29TeacherScript, -1
 	object_event 12,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29FruitTree, -1

@@ -26,6 +26,7 @@ MaleTrainers:
 	db SAGE
 	db BIKER
 	db SCIENTIST
+	db SHINYHUNTER
 .End
 
 FemaleTrainers:

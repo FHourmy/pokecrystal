@@ -31,7 +31,7 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 [ci]: https://github.com/pret/pokecrystal/actions
 [ci-badge]: https://github.com/pret/pokecrystal/actions/workflows/main.yml/badge.svg
 
-## features added :
+## Credits Features added :
 
 - Graphical improvements
 - Running shoes
@@ -79,6 +79,11 @@ https://github.com/pret/pokecrystal/wiki/Show-an-icon-for-the-current-weather
 https://github.com/pret/pokecrystal/wiki/Add-a-new-item
 https://github.com/pret/pokecrystal/wiki/Evolve-while-holding-an-item
 https://github.com/pret/pokecrystal/wiki/Add-a-new-Pack-pocket#5-add-space-in-wram-for-the-new-pocket -> bag size
+
+https://github.com/pret/pokecrystal/wiki/Add-a-new-overworld-sprite
+https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system
+https://github.com/pret/pokecrystal/wiki/Allow-more-trainer-parties,-with-individual-DVs,-stat-experience,-nicknames,-variable-teams,-etc
+https://github.com/pret/pokecrystal/wiki/Add-a-new-trainer-class
 
 // move relearners :
 https://github.com/pret/pokecrystal/wiki/Add-a-Move-Relearner
