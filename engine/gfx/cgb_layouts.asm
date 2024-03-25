@@ -642,9 +642,10 @@ _CGB_TrainerCard:
 	ld a, PRYCE
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, PREDEFPAL_CGB_BADGE
-	call GetPredefPal
-	call LoadHLPaletteIntoDE
+	ld hl, .BadgePalettesJohto
+	ld bc, 8 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
 
 	; fill screen with opposite-gender palette for the card border
 	hlcoord 0, 0, wAttrmap
@@ -655,6 +656,16 @@ _CGB_TrainerCard:
 	jr z, .got_gender
 	ld a, $0 ; chris
 .got_gender
+	call ByteFill
+	; fill trainer sprite area with same-gender palette
+	hlcoord 14, 1, wAttrmap
+	lb bc, 7, 5
+	ld a, [wPlayerGender]
+	and a
+	ld a, $0 ; chris
+	jr z, .got_gender2
+	ld a, $1 ; kris
+.got_gender2
   call FillBoxCGB
   ; top-right corner still uses the border's palette
   hlcoord 18, 1, wAttrmap
@@ -711,6 +722,8 @@ _CGB_TrainerCard:
 	ldh [hCGBPalUpdate], a
 	ret
 
+.BadgePalettesJohto:
+INCLUDE "gfx/trainer_card/johto_badges.pal"
 
 _CGB_TrainerCardKanto:
 	ld de, wBGPals1
@@ -738,10 +751,10 @@ _CGB_TrainerCardKanto:
 	ld a, BLUE
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, PREDEFPAL_CGB_BADGE
-	call GetPredefPal
-	call LoadHLPaletteIntoDE
-	call LoadHLPaletteIntoDE
+  ld hl, .BadgePalettesKanto
+  ld bc, 8 palettes
+  ld a, BANK(wOBPals1)
+  call FarCopyWRAM
 
 	; fill screen with opposite-gender palette for the card border
 	hlcoord 0, 0, wAttrmap
@@ -810,6 +823,8 @@ _CGB_TrainerCardKanto:
 	ldh [hCGBPalUpdate], a
 	ret
 
+.BadgePalettesKanto:
+INCLUDE "gfx/trainer_card/kanto_badges.pal"
 
 _CGB_MoveList:
 	ld de, wBGPals1
