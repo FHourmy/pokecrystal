@@ -204,11 +204,11 @@ TrainerCard_Page3_LoadGFX:
 	ld hl, vTiles2 tile $29
 	lb bc, BANK(LeaderGFX2), 86
 	call Request2bpp
-  ld hl, TrainerCard_KantoBadgesOAM
 	ld de, BadgeGFX2
 	ld hl, vTiles0 tile $00
 	lb bc, BANK(BadgeGFX2), 44
 	call Request2bpp
+	ld hl, TrainerCard_KantoBadgesOAM
 	call TrainerCard_Page2_3_InitObjectsAndStrings
 	call TrainerCard_IncrementJumptable
 	ret
@@ -231,7 +231,7 @@ TrainerCard_Page3_Joypad:
 	ret
 
 .pressed_a
-	ld a, TRAINERCARDSTATE_PAGE1_LOADGFX
+	ld a, TRAINERCARDSTATE_QUIT
 	ld [wJumptableIndex], a
 	ret
 
