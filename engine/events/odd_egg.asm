@@ -36,11 +36,40 @@ _GiveOddEgg:
 	inc bc
 	jr .loop
 .done
-
 	ld hl, OddEggs
 	ld a, NICKNAMED_MON_STRUCT_LENGTH
 	call AddNTimes
+  jr GiveSpecialEgg
 
+GivePichuEgg:
+  ld hl, PichuEgg
+  jr GiveSpecialEgg
+
+GiveCleffaEgg:
+  ld hl, CleffaEgg
+  jr GiveSpecialEgg
+
+GiveIgglybuffEgg:
+  ld hl, IgglybuffEgg
+  jr GiveSpecialEgg
+
+GiveSmoochumEgg:
+  ld hl, SmoochumEgg
+  jr GiveSpecialEgg
+
+GiveMagbyEgg:
+  ld hl, MagbyEgg
+  jr GiveSpecialEgg
+
+GiveElekidEgg:
+  ld hl, ElekidEgg
+  jr GiveSpecialEgg
+
+GiveTyrogueEgg:
+  ld hl, TyrogueEgg
+  jr GiveSpecialEgg
+
+GiveSpecialEgg:
 	; Writes to wOddEgg, wOddEggName, and wOddEggOT,
 	; even though OddEggs does not have data for wOddEggOT
 	ld de, wOddEgg

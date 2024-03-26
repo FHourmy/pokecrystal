@@ -254,3 +254,4 @@ MonMenuIcons:
 	db ICON_HO_OH
 	db ICON_CELEBI
 	assert_table_length NUM_POKEMON
+  db ICON_EGG

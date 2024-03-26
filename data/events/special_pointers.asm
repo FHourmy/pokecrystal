@@ -183,3 +183,10 @@ SpecialsPointers::
 	add_special InitialSetDSTFlag
 	add_special InitialClearDSTFlag
 	add_special UnusedDummySpecial ; unused
+	add_special GivePichuEgg
+	add_special GiveCleffaEgg
+	add_special GiveIgglybuffEgg
+	add_special GiveSmoochumEgg
+	add_special GiveMagbyEgg
+	add_special GiveElekidEgg
+	add_special GiveTyrogueEgg

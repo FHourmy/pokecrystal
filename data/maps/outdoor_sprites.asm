@@ -180,6 +180,7 @@ GoldenrodGroupSprites:
 	db SPRITE_ROCKET
 	db SPRITE_LASS
 	; 7 of max 9 walking sprites
+  db SPRITE_EGG
 	db SPRITE_DAY_CARE_MON_1
 	db SPRITE_DAY_CARE_MON_2
 	db SPRITE_POKE_BALL
