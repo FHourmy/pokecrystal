@@ -36,6 +36,7 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 - New selection oddegg + force shiny (can be improved by moving it to a new map / enlarging daycare inside)
 
 https://github.com/pret/pokecrystal/wiki/Removing-the-intro
+https://github.com/pret/pokecrystal/wiki/Remove-the-artificial-save-delay
 https://github.com/pret/pokecrystal/wiki/Running-Shoes
 https://github.com/pret/pokecrystal/wiki/Improve-the-outdoor-sprite-system
 https://github.com/pret/pokecrystal/wiki/Allow-more-trainer-parties,-with-individual-DVs,-stat-experience,-nicknames,-variable-teams,-etc
