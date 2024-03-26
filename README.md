@@ -43,3 +43,4 @@ https://github.com/pret/pokecrystal/wiki/Allow-more-trainer-parties,-with-indivi
 https://github.com/pret/pokecrystal/wiki/Show-the-tops-of-leaders-heads-on-the-trainer-card
 https://github.com/pret/pokecrystal/wiki/Add-a-third-trainer-card-page-for-Kanto-badges
 https://github.com/pret/pokecrystal/wiki/Colored-trainer-card-badges
+https://github.com/pret/pokecrystal/wiki/Color-Pok%C3%A9mon-pictures-shown-in-overworld
