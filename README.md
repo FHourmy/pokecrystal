@@ -33,13 +33,21 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 
 ## features added :
 
-- New selection oddegg + force shiny (can be improved by moving it to a new map / enlarging daycare inside)
+- Graphical improvements
+- Running shoes
+- XP when catching
 - HM forgettable
+- HM usable outside of battle if can learn + in inventory
+- TM usable outside of battle if can learn
+  - dig and sweet scent after whitney if not learned
+  - headbutt after bugsy if not learned
+- New selection oddegg + force shiny (can be improved by moving it to a new map / enlarging daycare inside)
 
 https://github.com/pret/pokecrystal/wiki/Removing-the-intro
 https://github.com/pret/pokecrystal/wiki/Remove-the-artificial-save-delay
 https://github.com/pret/pokecrystal/wiki/Running-Shoes
 https://github.com/pret/pokecrystal/wiki/Gain-experience-from-catching-Pok%C3%A9mon
+https://github.com/pret/pokecrystal/wiki/Allow-Using-a-Field-Move-if-the-Pokemon-Can-Learn-It
 
 https://github.com/pret/pokecrystal/wiki/Allow-more-trainer-parties,-with-individual-DVs,-stat-experience,-nicknames,-variable-teams,-etc
 

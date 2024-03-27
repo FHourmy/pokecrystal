@@ -1461,10 +1461,22 @@ HeadbuttScript:
 	end
 
 TryHeadbuttOW::
+; Step 1
+  ld de, ENGINE_HIVEBADGE
+  call CheckEngineFlag
+	jr c, .no
+
+; Step 2
+	ld d, HEADBUTT
+	call CheckPartyCanLearnMove
+  and a
+	jr z, .can_use ; cannot learn headbutt
+
+; Step 3
 	ld d, HEADBUTT
 	call CheckPartyMove
 	jr c, .no
-
+.can_use
 	ld a, BANK(AskHeadbuttScript)
 	ld hl, AskHeadbuttScript
 	call CallScript
@@ -1585,10 +1597,17 @@ AskRockSmashText:
 	text_end
 
 HasRockSmash:
+; Step 1
+	ld d, ROCK_SMASH
+	call CheckPartyCanLearnMove
+  and a
+	jr z, .yes
+
+; Step 2
 	ld d, ROCK_SMASH
 	call CheckPartyMove
 	jr nc, .yes
-; no
+.no
 	ld a, 1
 	jr .done
 .yes
