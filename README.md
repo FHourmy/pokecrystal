@@ -43,6 +43,8 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
   - headbutt after bugsy if not learned
 - New selection oddegg + force shiny (can be improved by moving it to a new map / enlarging daycare inside)
 
+## Credits
+
 https://github.com/pret/pokecrystal/wiki/Removing-the-intro
 https://github.com/pret/pokecrystal/wiki/Remove-the-artificial-save-delay
 
@@ -58,3 +60,6 @@ https://github.com/pret/pokecrystal/wiki/Colored-trainer-card-badges
 https://github.com/pret/pokecrystal/wiki/Show-the-tops-of-leaders-heads-on-the-trainer-card
 https://github.com/pret/pokecrystal/wiki/Add-a-third-trainer-card-page-for-Kanto-badges
 https://github.com/pret/pokecrystal/wiki/Show-move-names-when-you-receive-a-TM-or-HM
+https://github.com/pret/pokecrystal/wiki/Add-a-fourth-stats-page
+
+Repo Crystal legacy : https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy
