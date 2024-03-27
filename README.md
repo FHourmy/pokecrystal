@@ -34,6 +34,7 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 ## features added :
 
 - New selection oddegg + force shiny (can be improved by moving it to a new map / enlarging daycare inside)
+- HM forgettable
 
 https://github.com/pret/pokecrystal/wiki/Removing-the-intro
 https://github.com/pret/pokecrystal/wiki/Remove-the-artificial-save-delay
