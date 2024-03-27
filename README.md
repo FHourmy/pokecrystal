@@ -45,6 +45,7 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 
 https://github.com/pret/pokecrystal/wiki/Removing-the-intro
 https://github.com/pret/pokecrystal/wiki/Remove-the-artificial-save-delay
+
 https://github.com/pret/pokecrystal/wiki/Running-Shoes
 https://github.com/pret/pokecrystal/wiki/Gain-experience-from-catching-Pok%C3%A9mon
 https://github.com/pret/pokecrystal/wiki/Allow-Using-a-Field-Move-if-the-Pokemon-Can-Learn-It
@@ -56,3 +57,4 @@ https://github.com/pret/pokecrystal/wiki/Color-Pok%C3%A9mon-pictures-shown-in-ov
 https://github.com/pret/pokecrystal/wiki/Colored-trainer-card-badges
 https://github.com/pret/pokecrystal/wiki/Show-the-tops-of-leaders-heads-on-the-trainer-card
 https://github.com/pret/pokecrystal/wiki/Add-a-third-trainer-card-page-for-Kanto-badges
+https://github.com/pret/pokecrystal/wiki/Show-move-names-when-you-receive-a-TM-or-HM
