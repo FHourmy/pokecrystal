@@ -38,6 +38,7 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 https://github.com/pret/pokecrystal/wiki/Removing-the-intro
 https://github.com/pret/pokecrystal/wiki/Remove-the-artificial-save-delay
 https://github.com/pret/pokecrystal/wiki/Running-Shoes
+https://github.com/pret/pokecrystal/wiki/Gain-experience-from-catching-Pok%C3%A9mon
 
 https://github.com/pret/pokecrystal/wiki/Allow-more-trainer-parties,-with-individual-DVs,-stat-experience,-nicknames,-variable-teams,-etc
 
