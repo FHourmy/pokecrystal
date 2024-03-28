@@ -42,6 +42,9 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
   - dig and sweet scent after whitney if not learned
   - headbutt after bugsy if not learned
 - New selection oddegg + force shiny (can be improved by moving it to a new map / enlarging daycare inside)
+- Types update
+  - Dark : special => physical
+  - Ghost : physical => special
 
 ## Credits
 
