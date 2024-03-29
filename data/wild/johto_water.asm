@@ -53,9 +53,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons MOUNT_MORTAR_1F_OUTSIDE
 	db 4 percent ; encounter rate
-	db 15, GOLDEEN
-	db 20, MARILL
 	db 20, SEAKING
+	db 20, MARILL
+	db 20, REMORAID
 	end_water_wildmons
 
 	def_water_wildmons MOUNT_MORTAR_2F_INSIDE
@@ -165,23 +165,23 @@ JohtoWaterWildMons:
 
 	def_water_wildmons ROUTE_40
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
 	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 20, SHELLDER
+	db 20, CHINCHOU
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_41
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
 	db 20, TENTACRUEL
+	db 20, HORSEA
 	db 20, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_42
 	db 4 percent ; encounter rate
-	db 20, GOLDEEN
+	db 20, REMORAID
 	db 15, GOLDEEN
-	db 20, SEAKING
+	db 15, QWILFISH
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_43
@@ -229,13 +229,13 @@ JohtoWaterWildMons:
 	def_water_wildmons CIANWOOD_CITY
 	db 6 percent ; encounter rate
 	db 20, TENTACOOL
-	db 15, TENTACOOL
+	db 15, SHELLDER
 	db 20, TENTACRUEL
 	end_water_wildmons
 
 	def_water_wildmons OLIVINE_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
+	db 20, CHINCHOU
 	db 15, TENTACOOL
 	db 20, TENTACRUEL
 	end_water_wildmons
