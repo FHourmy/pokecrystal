@@ -179,7 +179,7 @@ KantoGrassWildMons:
 	db 3, PIDGEY
 	db 6, FURRET
 	db 4, PIDGEY
-	db 4, PIDGEY
+	db 5, CHARMANDER
 	; day
 	db 2, PIDGEY
 	db 2, RATTATA
@@ -187,7 +187,7 @@ KantoGrassWildMons:
 	db 3, PIDGEY
 	db 6, FURRET
 	db 4, PIDGEY
-	db 4, PIDGEY
+	db 5, CHARMANDER
 	; nite
 	db 2, HOOTHOOT
 	db 2, RATTATA
@@ -195,7 +195,7 @@ KantoGrassWildMons:
 	db 3, HOOTHOOT
 	db 6, RATICATE
 	db 4, HOOTHOOT
-	db 4, HOOTHOOT
+	db 5, CHARMANDER
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_2
@@ -207,7 +207,7 @@ KantoGrassWildMons:
 	db 7, BUTTERFREE
 	db 7, LEDIAN
 	db 4, PIKACHU
-	db 4, PIKACHU
+	db 4, BULBASAUR
 	; day
 	db 3, CATERPIE
 	db 3, PIDGEY
@@ -215,7 +215,7 @@ KantoGrassWildMons:
 	db 7, BUTTERFREE
 	db 7, PIDGEOTTO
 	db 4, PIKACHU
-	db 4, PIKACHU
+	db 4, BULBASAUR
 	; nite
 	db 3, HOOTHOOT
 	db 3, SPINARAK
@@ -223,7 +223,7 @@ KantoGrassWildMons:
 	db 7, NOCTOWL
 	db 7, ARIADOS
 	db 4, NOCTOWL
-	db 4, NOCTOWL
+	db 4, BULBASAUR
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_3
@@ -683,7 +683,7 @@ KantoGrassWildMons:
 	db 4, DODUO
 	db 6, PONYTA
 	db 7, FEAROW
-	db 7, FEAROW
+	db 7, SQUIRTLE
 	; day
 	db 3, RATTATA
 	db 3, SPEAROW
@@ -691,7 +691,7 @@ KantoGrassWildMons:
 	db 4, DODUO
 	db 6, PONYTA
 	db 7, FEAROW
-	db 7, FEAROW
+	db 7, SQUIRTLE
 	; nite
 	db 3, RATTATA
 	db 3, POLIWAG
@@ -699,7 +699,7 @@ KantoGrassWildMons:
 	db 4, POLIWAG
 	db 6, RATTATA
 	db 7, RATTATA
-	db 7, RATTATA
+	db 7, SQUIRTLE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_24
