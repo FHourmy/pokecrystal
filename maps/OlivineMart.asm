@@ -10,7 +10,14 @@ OlivineMart_MapScripts:
 
 OlivineMartClerkScript:
 	opentext
+  checkflag ENGINE_MINERALBADGE
+	iftrue .BetterMart
 	pokemart MARTTYPE_STANDARD, MART_OLIVINE
+	closetext
+	end
+
+.BetterMart
+  pokemart MARTTYPE_STANDARD, MART_OLIVINE_2
 	closetext
 	end
 

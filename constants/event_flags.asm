@@ -755,6 +755,8 @@
 	const EVENT_BEAT_CHUCK
 	const EVENT_BEAT_PRYCE
 	const EVENT_BEAT_CLAIR
+  ; Goldenrod 2nd mart + move tutor
+	const EVENT_MART_TM_2
 ; Kanto Gym Leaders
 	const EVENT_BEAT_BROCK
 	const EVENT_BEAT_MISTY

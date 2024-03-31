@@ -14,7 +14,9 @@ Marts:
 	dw MartGoldenrod5F2
 	dw MartGoldenrod5F3
 	dw MartGoldenrod5F4
+  dw MartGoldenrod5F5
 	dw MartOlivine
+	dw MartOlivine2
 	dw MartEcruteak
 	dw MartMahogany1
 	dw MartMahogany2
@@ -82,12 +84,18 @@ MartAzalea:
 	db -1 ; end
 
 MartCianwood:
-	db 5 ; # items
+	db 11 ; # items
 	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
 	db FULL_HEAL
 	db REVIVE
+	db WATER_STONE
+	db FIRE_STONE
+	db LEAF_STONE
+	db THUNDERSTONE
+	db SUN_STONE
+	db MOON_STONE
 	db -1 ; end
 
 MartGoldenrod2F1:
@@ -134,36 +142,51 @@ MartGoldenrod4F:
 	db -1 ; end
 
 MartGoldenrod5F1:
-	db 3 ; # items
+	db 4 ; # items
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
+	db TM_THIEF
 	db -1 ; end
 
 MartGoldenrod5F2:
-	db 4 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_HEADBUTT
-	db -1 ; end
-
-MartGoldenrod5F3:
-	db 4 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_ROCK_SMASH
-	db -1 ; end
-
-MartGoldenrod5F4:
 	db 5 ; # items
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
+	db TM_THIEF
+	db TM_HEADBUTT
+	db -1 ; end
+
+MartGoldenrod5F3:
+	db 5 ; # items
+	db TM_THUNDERPUNCH
+	db TM_FIRE_PUNCH
+	db TM_ICE_PUNCH
+	db TM_THIEF
+	db TM_ROCK_SMASH
+	db -1 ; end
+
+MartGoldenrod5F4:
+	db 6 ; # items
+	db TM_THUNDERPUNCH
+	db TM_FIRE_PUNCH
+	db TM_ICE_PUNCH
+	db TM_THIEF
 	db TM_HEADBUTT
 	db TM_ROCK_SMASH
 	db -1 ; end
+
+MartGoldenrod5F5:
+db 7 ; # items
+db TM_SLUDGE_BOMB
+db TM_EARTHQUAKE
+db TM_PSYCHIC_M
+db TM_SHADOW_BALL
+db TM_IRON_TAIL
+db TM_GIGA_DRAIN
+db TM_TOXIC
+db -1 ; end
 
 MartOlivine:
 	db 9 ; # items
@@ -176,6 +199,22 @@ MartOlivine:
 	db ICE_HEAL
 	db SUPER_REPEL
 	db SURF_MAIL
+	db -1 ; end
+
+MartOlivine2:
+	db 12 ; # items
+	db GREAT_BALL
+	db SUPER_POTION
+	db HYPER_POTION
+	db ANTIDOTE
+	db PARLYZ_HEAL
+	db AWAKENING
+	db ICE_HEAL
+	db SUPER_REPEL
+	db SURF_MAIL
+	db METAL_COAT
+	db KINGS_ROCK
+	db UP_GRADE
 	db -1 ; end
 
 MartEcruteak:
