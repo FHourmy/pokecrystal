@@ -178,13 +178,14 @@ MartGoldenrod5F4:
 	db -1 ; end
 
 MartGoldenrod5F5:
-db 7 ; # items
+db 8 ; # items
 db TM_SLUDGE_BOMB
 db TM_EARTHQUAKE
 db TM_PSYCHIC_M
 db TM_SHADOW_BALL
 db TM_IRON_TAIL
 db TM_GIGA_DRAIN
+db TM_RETURN
 db TM_TOXIC
 db -1 ; end
 
