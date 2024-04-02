@@ -8,27 +8,68 @@
 	const BLACKTHORNCITY_YOUNGSTER1
 	const BLACKTHORNCITY_SANTOS
 	const BLACKTHORNCITY_COOLTRAINER_F2
+	const BLACKTHORNCITY_CLAIR
 
 BlackthornCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, BlackthornCityFlypointCallback
-	callback MAPCALLBACK_OBJECTS, BlackthornCitySantosCallback
+	callback MAPCALLBACK_OBJECTS, BlackthornCitySantosAndGymBlockCallback
 
 BlackthornCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_BLACKTHORN
 	endcallback
 
-BlackthornCitySantosCallback:
+BlackthornCitySantosAndGymBlockCallback:
 	readvar VAR_WEEKDAY
 	ifequal SATURDAY, .SantosAppears
 	disappear BLACKTHORNCITY_SANTOS
-	endcallback
+  sjump .NpcGymBlock
 
 .SantosAppears:
 	appear BLACKTHORNCITY_SANTOS
-	endcallback
+  sjump .NpcGymBlock
+
+.NpcGymBlock:
+  checkevent EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM
+  iffalse .noBlock
+  checkflag ENGINE_MINERALBADGE
+	iffalse .ClairBlock
+	checkflag ENGINE_STORMBADGE
+	iffalse .ClairBlock
+	checkflag ENGINE_GLACIERBADGE
+	iffalse .ClairBlock
+  sjump .nerdBlock
+
+.ClairBlock:
+  ; remove nerd gym block
+  appear BLACKTHORNCITY_CLAIR
+  disappear BLACKTHORNCITY_SUPER_NERD1
+  sjump .doneCallback
+
+.nerdBlock:
+  ; remove clair gym block
+  appear BLACKTHORNCITY_SUPER_NERD1
+  disappear BLACKTHORNCITY_CLAIR
+  sjump .doneCallback
+
+.noBlock:
+  ; remove both gym blocks
+  disappear BLACKTHORNCITY_CLAIR
+  disappear BLACKTHORNCITY_SUPER_NERD1
+  sjump .doneCallback
+
+.doneCallback
+  endcallback
+
+BlackthornClairScript:
+  faceplayer
+	opentext
+  writetext Text_ClairNotEnoughBadges
+	waitbutton
+	closetext
+	end
 
 BlackthornSuperNerdScript:
 	faceplayer
@@ -141,6 +182,30 @@ BlackthornCityPokecenterSign:
 
 BlackthornCityMartSign:
 	jumpstd MartSignScript
+
+Text_ClairNotEnoughBadges:
+	text "I am CLAIR."
+
+	para "The world's best"
+	line "dragon master."
+
+	para "I can hold my own"
+	line "against even the"
+
+	para "#MON LEAGUE's"
+	line "ELITE FOUR."
+
+	para "You don't even"
+	line "have 7 badges."
+
+	para "I don't lose my"
+	line "time with"
+	cont "rookies."
+
+	para "Come back when"
+	line "you stop being"
+	cont "weak."
+	done
 
 Text_ClairIsOut:
 	text "I am sorry."
@@ -344,3 +409,4 @@ BlackthornCity_MapEvents:
 	object_event 13, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornYoungsterScript, -1
 	object_event 22, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SantosScript, EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY
 	object_event 35, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerF2Script, -1
+	object_event 18, 12, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornClairScript, EVENT_BLACKTHORN_CITY_CLAIR_BLOCKS_GYM

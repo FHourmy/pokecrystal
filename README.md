@@ -45,6 +45,7 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 - Types update
   - Dark : special => physical
   - Ghost : physical => special
+- Removed roadblock Mahogany -> Ice path (Clair still blocked until radio tower is done) + updated blackthorn gym block (youtube Zen Mode idea)
 
 ## Credits
 
