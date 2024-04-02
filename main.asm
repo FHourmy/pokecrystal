@@ -695,3 +695,7 @@ SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
 ; If it is removed, also remove the "tools/stadium" command in the Makefile.
 
 	ds $220
+
+SECTION "Battle Weather Images", ROMX
+
+INCLUDE "gfx/weather_images.asm"
