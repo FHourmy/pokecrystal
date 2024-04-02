@@ -65,5 +65,6 @@ https://github.com/pret/pokecrystal/wiki/Show-the-tops-of-leaders-heads-on-the-t
 https://github.com/pret/pokecrystal/wiki/Add-a-third-trainer-card-page-for-Kanto-badges
 https://github.com/pret/pokecrystal/wiki/Show-move-names-when-you-receive-a-TM-or-HM
 https://github.com/pret/pokecrystal/wiki/Add-a-fourth-stats-page
+https://github.com/pret/pokecrystal/wiki/Replace-Menu-Account-with-a-small-clock-in-the-corner-of-the-screen
 
 Repo Crystal legacy : https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy
