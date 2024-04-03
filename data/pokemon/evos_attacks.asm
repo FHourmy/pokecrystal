@@ -332,7 +332,7 @@ EkansEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WRAP
 	db 1, LEER
-	db 9, POISON_STING
+	db 7, POISON_STING
 	db 15, BITE
 	db 18, ACID
 	db 23, GLARE
