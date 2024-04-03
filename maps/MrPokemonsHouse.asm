@@ -35,6 +35,9 @@ MrPokemonsHouseMrPokemonEventScript:
 	itemnotify
 	setevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	blackoutmod CHERRYGROVE_CITY
+	writetext MrPokemonExpShareText
+	waitbutton
+	verbosegiveitem EXP_SHARE
 	writetext MrPokemonIntroText3
 	promptbutton
 	turnobject MRPOKEMONSHOUSE_GENTLEMAN, RIGHT
@@ -69,7 +72,7 @@ MrPokemonsHouse_MrPokemonScript:
 	writetext MrPokemonText_GimmeTheScale
 	yesorno
 	iffalse .refused
-	verbosegiveitem EXP_SHARE
+	verbosegiveitem LUCKY_EGG
 	iffalse .full
 	takeitem RED_SCALE
 	sjump .AlwaysNewDiscoveries
@@ -206,6 +209,12 @@ MrPokemonIntroText3:
 	cont "the authority."
 	done
 
+MrPokemonExpShareText:
+	text "I also have a"
+	line "special item for"
+	cont "you."
+	done
+
 MrPokemonIntroText4:
 	text "Even PROF.OAK here"
 	line "recognizes that."
@@ -338,7 +347,7 @@ MrPokemonText_GimmeTheScale:
 	line "care to trade it?"
 
 	para "I can offer this"
-	line "EXP.SHARE I got"
+	line "LUCKY EGG I got"
 	cont "from PROF.OAK."
 	done
 
