@@ -46,6 +46,10 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
   - Dark : special => physical
   - Ghost : physical => special
 - Removed roadblock Mahogany -> Ice path (Clair still blocked until radio tower is done) + updated blackthorn gym block (youtube Zen Mode idea)
+- TYROGUE evo :
+  - lvl 20 -> HITMONTOP
+  - lvl 20 holding PUNCHING BAG-> HITMONCHAN
+  - lvl 20 holding KICKING BAG-> HITMONLEE
 
 ## Credits
 
@@ -68,5 +72,7 @@ https://github.com/pret/pokecrystal/wiki/Show-move-names-when-you-receive-a-TM-o
 https://github.com/pret/pokecrystal/wiki/Add-a-fourth-stats-page
 https://github.com/pret/pokecrystal/wiki/Replace-Menu-Account-with-a-small-clock-in-the-corner-of-the-screen
 https://github.com/pret/pokecrystal/wiki/Show-an-icon-for-the-current-weather
+https://github.com/pret/pokecrystal/wiki/Add-a-new-item
+https://github.com/pret/pokecrystal/wiki/Evolve-while-holding-an-item
 
 Repo Crystal legacy : https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy

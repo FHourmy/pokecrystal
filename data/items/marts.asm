@@ -133,12 +133,14 @@ MartGoldenrod3F:
 	db -1 ; end
 
 MartGoldenrod4F:
-	db 5 ; # items
+	db 7 ; # items
 	db PROTEIN
 	db IRON
 	db CARBOS
 	db CALCIUM
 	db HP_UP
+	db PUNCHING_BAG
+	db KICKING_BAG
 	db -1 ; end
 
 MartGoldenrod5F1:

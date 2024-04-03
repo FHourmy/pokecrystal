@@ -178,7 +178,7 @@ ItemNames::
 	li "TERU-SAMA"
 	li "PARK BALL"
 	li "RAINBOW WING"
-	li "TERU-SAMA"
+	li "KICKING BAG"
 	li "BRICK PIECE"
 	li "SURF MAIL"
 	li "LITEBLUEMAIL"
@@ -189,7 +189,7 @@ ItemNames::
 	li "BLUESKY MAIL"
 	li "MUSIC MAIL"
 	li "MIRAGE MAIL"
-	li "TERU-SAMA"
+	li "PUNCHING BAG"
 	assert_list_length NUM_ITEMS
 	li "TM01"
 	li "TM02"

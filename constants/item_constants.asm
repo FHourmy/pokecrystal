@@ -184,7 +184,7 @@
 	const ITEM_B0      ; b0
 	const PARK_BALL    ; b1
 	const RAINBOW_WING ; b2
-	const ITEM_B3      ; b3
+	const KICKING_BAG  ; b3
 	const BRICK_PIECE  ; b4
 	const SURF_MAIL    ; b5
 	const LITEBLUEMAIL ; b6
@@ -195,7 +195,7 @@
 	const BLUESKY_MAIL ; bb
 	const MUSIC_MAIL   ; bc
 	const MIRAGE_MAIL  ; bd
-	const ITEM_BE      ; be
+	const PUNCHING_BAG ; be
 DEF NUM_ITEMS EQU const_value - 1
 
 DEF __tmhm_value__ = 1

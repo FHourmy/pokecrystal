@@ -179,7 +179,7 @@ ItemDescriptions:
 	dw TeruSama23Desc
 	dw ParkBallDesc
 	dw RainbowWingDesc
-	dw TeruSama24Desc
+	dw KickingBagDesc
 	dw BrickPieceDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
@@ -190,7 +190,7 @@ ItemDescriptions:
 	dw BlueSkyMailDesc
 	dw MusicMailDesc
 	dw MirageMailDesc
-	dw TeruSama25Desc
+	dw PunchingBagDesc
 	assert_table_length NUM_ITEMS
 	dw TeruSama26Desc
 	dw TeruSama26Desc
@@ -942,8 +942,9 @@ RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
 
-TeruSama24Desc:
-	db   "?@"
+KickingBagDesc:
+	db   "Item liked by Ty-"
+	next "rogue and Kicklee@"
 
 BrickPieceDesc:
 	db   "A rare chunk of"
@@ -985,8 +986,9 @@ MirageMailDesc:
 	db   "MEW-print MAIL."
 	next "(HOLD)@"
 
-TeruSama25Desc:
-	db   "?@"
+PunchingBagDesc:
+	db   "Item liked by Ty-"
+	next "rogue and Tygnon@"
 
 TeruSama26Desc:
 	db   "?@"
