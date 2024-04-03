@@ -1666,21 +1666,8 @@ _DayCareManIntroText::
 
 _DayCareManIntroEggText::
 	text "I'm the DAY-CARE"
-	line "MAN. Do you know"
-	cont "about EGGS?"
-
-	para "I was raising"
-	line "#MON with my"
-	cont "wife, you see."
-
-	para "We were shocked to"
-	line "find an EGG!"
-
-	para "How incredible is"
-	line "that?"
-
-	para "So, want me to"
-	line "raise a #MON?"
+	line "MAN. Want me to"
+	cont "raise a #MON?"
 	done
 
 _DayCareLadyIntroText::
@@ -1693,18 +1680,7 @@ _DayCareLadyIntroText::
 
 _DayCareLadyIntroEggText::
 	text "I'm the DAY-CARE"
-	line "LADY. Do you know"
-	cont "about EGGS?"
-
-	para "My husband and I"
-	line "were raising some"
-	cont "#MON, you see."
-
-	para "We were shocked to"
-	line "find an EGG!"
-
-	para "How incredible"
-	line "could that be?"
+	line "LADY."
 
 	para "Should I raise a"
 	line "#MON for you?"

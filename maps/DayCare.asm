@@ -57,9 +57,9 @@ PickEggPichu:
 	special GivePichuEgg
 	opentext
 	writetext DayCareText_GotOddEgg
+  disappear DAYCARE_EGG_PICHU
 	playsound SFX_KEY_ITEM
 	waitsfx
-  disappear DAYCARE_EGG_PICHU
 	writetext DayCareText_NamedTakeCare
 	waitbutton
 	closetext
@@ -97,9 +97,9 @@ PickEggCleffa:
 	special GiveCleffaEgg
 	opentext
 	writetext DayCareText_GotOddEgg
+  disappear DAYCARE_EGG_CLEFFA
 	playsound SFX_KEY_ITEM
 	waitsfx
-  disappear DAYCARE_EGG_CLEFFA
 	writetext DayCareText_NamedTakeCare
 	waitbutton
 	closetext
@@ -137,9 +137,9 @@ PickEggIgglybuff:
 	special GiveIgglybuffEgg
 	opentext
 	writetext DayCareText_GotOddEgg
+  disappear DAYCARE_EGG_IGGLYBUFF
 	playsound SFX_KEY_ITEM
 	waitsfx
-  disappear DAYCARE_EGG_IGGLYBUFF
 	writetext DayCareText_NamedTakeCare
 	waitbutton
 	closetext
@@ -176,9 +176,9 @@ PickEggSmoochum:
 	special GiveSmoochumEgg
 	opentext
 	writetext DayCareText_GotOddEgg
+  disappear DAYCARE_EGG_SMOOCHUM
 	playsound SFX_KEY_ITEM
 	waitsfx
-  disappear DAYCARE_EGG_SMOOCHUM
 	writetext DayCareText_NamedTakeCare
 	waitbutton
 	closetext
@@ -215,9 +215,9 @@ PickEggMagby:
 	special GiveMagbyEgg
 	opentext
 	writetext DayCareText_GotOddEgg
+  disappear DAYCARE_EGG_MAGBY
 	playsound SFX_KEY_ITEM
 	waitsfx
-  disappear DAYCARE_EGG_MAGBY
 	writetext DayCareText_NamedTakeCare
 	waitbutton
 	closetext
@@ -254,9 +254,9 @@ PickEggElekid:
 	special GiveElekidEgg
 	opentext
 	writetext DayCareText_GotOddEgg
+  disappear DAYCARE_EGG_ELEKID
 	playsound SFX_KEY_ITEM
 	waitsfx
-  disappear DAYCARE_EGG_ELEKID
 	writetext DayCareText_NamedTakeCare
 	waitbutton
 	closetext
@@ -294,9 +294,9 @@ PickEggTyrogue:
 	special GiveTyrogueEgg
 	opentext
 	writetext DayCareText_GotOddEgg
+  disappear DAYCARE_EGG_TYROGUE
 	playsound SFX_KEY_ITEM
 	waitsfx
-  disappear DAYCARE_EGG_TYROGUE
 	writetext DayCareText_NamedTakeCare
 	waitbutton
 	closetext
@@ -448,16 +448,22 @@ DayCareWomanText_GiveOddEgg:
   done
 
 DayCareText_TakeCare:
-	text "We will take"
+	text "Don't worry"
+	line "dear."
+
+	para "We will take"
 	line "care of the"
-  cont "other eggs."
+  cont "other EGGs."
 
 	done
 
 DayCareText_NamedTakeCare:
-	text "GRANNY: We will"
-	line "take care of"
-  cont "the other eggs."
+  text "GRANNY: Don't"
+	line "worry dear."
+
+	text "We will take"
+	line "care of the"
+  cont "other EGGs."
 
 	done
 DayCareText_PartyFull:
