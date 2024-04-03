@@ -449,14 +449,14 @@ Can_Use_Sweet_Scent:
 	ret z
 
 .valid_location
-; Step 1: Check if mon knows Move 
+  ; Step 2: Check if mon knows Move 
 	ld a, SWEET_SCENT
 	call CheckMonKnowsMove
 	and a
 	jr z, .yes
 
-  ; Step 2: Badge Check
-  ld de, PLAINBADGE
+  ; Step 3: Badge Check
+  ld de, ENGINE_PLAINBADGE
   ld b, CHECK_FLAG
   farcall EngineFlagAction
   ld a, c
@@ -492,7 +492,7 @@ CanUseDig:
 	and a
 	jr z, .yes
 ; Dig only after whitney
-  ld de, PLAINBADGE
+  ld de, ENGINE_PLAINBADGE
   ld b, CHECK_FLAG
   farcall EngineFlagAction
   ld a, c
