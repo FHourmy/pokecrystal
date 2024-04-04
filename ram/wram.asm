@@ -3131,8 +3131,6 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 49
-
 ; fight counts
 wJackFightCount::    db
 wBeverlyFightCount:: db ; unreferenced
@@ -3163,7 +3161,7 @@ wKenjiFightCount::   db ; unreferenced
 wParryFightCount::   db
 wErinFightCount::    db
 
-	ds 100
+	ds 34
 
 wEventFlags:: flag_array NUM_EVENTS
 

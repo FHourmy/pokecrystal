@@ -76,5 +76,6 @@ https://github.com/pret/pokecrystal/wiki/Replace-Menu-Account-with-a-small-clock
 https://github.com/pret/pokecrystal/wiki/Show-an-icon-for-the-current-weather
 https://github.com/pret/pokecrystal/wiki/Add-a-new-item
 https://github.com/pret/pokecrystal/wiki/Evolve-while-holding-an-item
+https://github.com/pret/pokecrystal/wiki/Add-a-new-Pack-pocket#5-add-space-in-wram-for-the-new-pocket -> bag size
 
 Repo Crystal legacy : https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy
