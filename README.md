@@ -41,6 +41,7 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 - TM usable outside of battle if can learn
   - dig and sweet scent after whitney if not learned
   - headbutt after bugsy if not learned
+- Restored GSBALL event
 - New selection oddegg + force shiny (can be improved by moving it to a new map / enlarging daycare inside)
 - Types update
   - Dark : special => physical
@@ -60,6 +61,7 @@ https://github.com/pret/pokecrystal/wiki/Running-Shoes
 https://github.com/pret/pokecrystal/wiki/Gain-experience-from-catching-Pok%C3%A9mon
 https://github.com/pret/pokecrystal/wiki/Allow-Using-a-Field-Move-if-the-Pokemon-Can-Learn-It
 https://github.com/pret/pokecrystal/wiki/Kurt-Makes-Pokeballs-Instantly
+https://github.com/pret/pokecrystal/wiki/Restore-the-GS-Ball-Celebi-Event
 
 https://github.com/pret/pokecrystal/wiki/Allow-more-trainer-parties,-with-individual-DVs,-stat-experience,-nicknames,-variable-teams,-etc
 
