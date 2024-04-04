@@ -193,11 +193,12 @@ BugsyText_HiveBadgeSpeech:
 	para "will obey you,"
 	line "even traded ones."
 
-	para "#MON will be able"
-	line "to use CUT and"
-	cont "HEADBUTT outside"
+	para "#MON will be"
+	line "able to use CUT"
+	cont "and HEADBUTT"
 
-	para "of battle too."
+	para "outside of battle"
+  line "too."
 
 	para "Here, I also want"
 	line "you to have this."
