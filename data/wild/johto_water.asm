@@ -124,7 +124,7 @@ JohtoWaterWildMons:
 	def_water_wildmons OLIVINE_PORT
 	db 2 percent ; encounter rate
 	db 20, TENTACOOL
-	db 15, TENTACOOL
+	db 15, CHINCHOU
 	db 20, TENTACRUEL
 	end_water_wildmons
 
@@ -165,16 +165,16 @@ JohtoWaterWildMons:
 
 	def_water_wildmons ROUTE_40
 	db 6 percent ; encounter rate
-	db 15, TENTACOOL
-	db 20, SHELLDER
-	db 20, CHINCHOU
+	db 21, TENTACOOL
+	db 23, SHELLDER
+	db 23, CHINCHOU
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_41
 	db 6 percent ; encounter rate
-	db 20, TENTACRUEL
-	db 20, HORSEA
-	db 20, MANTINE
+	db 25, TENTACRUEL
+	db 23, HORSEA
+	db 26, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_42
@@ -228,16 +228,16 @@ JohtoWaterWildMons:
 
 	def_water_wildmons CIANWOOD_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, SHELLDER
-	db 20, TENTACRUEL
+	db 22, TENTACOOL
+	db 23, SHELLDER
+	db 27, TENTACRUEL
 	end_water_wildmons
 
 	def_water_wildmons OLIVINE_CITY
 	db 6 percent ; encounter rate
 	db 20, CHINCHOU
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 19, TENTACOOL
+	db 22, TENTACRUEL
 	end_water_wildmons
 
 	def_water_wildmons ECRUTEAK_CITY
