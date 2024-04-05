@@ -3252,11 +3252,13 @@ PiloswineEvosAttacks:
 	db 1, ENDURE
 	db 10, POWDER_SNOW
 	db 19, ENDURE
+	db 22, MAGNITUDE
 	db 28, TAKE_DOWN
 	db 33, FURY_ATTACK
 	db 38, MIST
 	db 42, BLIZZARD
 	db 45, AMNESIA
+	db 47, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:
