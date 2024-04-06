@@ -190,3 +190,5 @@ SpecialsPointers::
 	add_special GiveMagbyEgg
 	add_special GiveElekidEgg
 	add_special GiveTyrogueEgg
+  add_special MoveReminder
+  add_special EggMoveReminder

@@ -6,10 +6,18 @@ MoveDeletersHouse_MapScripts:
 
 	def_callbacks
 
-MoveDeleter:
+MoveRelearner:
 	faceplayer
 	opentext
-	special MoveDeletion
+	special MoveReminder
+	waitbutton
+	closetext
+	end
+
+EggMoveRelearner:
+	faceplayer
+	opentext
+	special EggMoveReminder
 	waitbutton
 	closetext
 	end
@@ -31,4 +39,5 @@ MoveDeletersHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, MoveDeletersHouseBookshelf
 
 	def_object_events
-	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoveDeleter, -1
+	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoveRelearner, -1
+	object_event  5,  4, SPRITE_FISHER, 	  SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EggMoveRelearner, -1

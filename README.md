@@ -36,6 +36,7 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
 - Graphical improvements
 - Running shoes
 - XP when catching
+- Move relearner + Egg move relearner (replace move deleter)
 - HM forgettable
 - HM usable outside of battle if can learn + in inventory
 - TM usable outside of battle if can learn
@@ -77,5 +78,9 @@ https://github.com/pret/pokecrystal/wiki/Show-an-icon-for-the-current-weather
 https://github.com/pret/pokecrystal/wiki/Add-a-new-item
 https://github.com/pret/pokecrystal/wiki/Evolve-while-holding-an-item
 https://github.com/pret/pokecrystal/wiki/Add-a-new-Pack-pocket#5-add-space-in-wram-for-the-new-pocket -> bag size
+
+// move relearners :
+https://github.com/pret/pokecrystal/wiki/Add-a-Move-Relearner
+https://github.com/pret/pokecrystal/compare/master...Nayru62:pokecrystal:PC_Move_and_EggMove_Relearner
 
 Repo Crystal legacy : https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy
