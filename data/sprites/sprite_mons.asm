@@ -37,4 +37,26 @@ SpriteMons:
 	db LUGIA
 	db HO_OH
 	db EGG
+	db PERSIAN
+	db MEOWTH
+	db NIDORAN_F
+	db NIDORINO
+	db RATTATA
+	db BAYLEEF
+	db POLIWRATH
+	db BLISSEY
+	db ABRA
+	db DRATINI
+	db MILTANK
+	db ELECTRODE
+	db KANGASKHAN
+	db PSYDUCK
+	db FARFETCH_D
+	db DODRIO
+	db PIDGEY
+	db FEAROW
+	db MURKROW
+	db SPEAROW
+	db DRAGONITE
+	db AMPHAROS
 	assert_table_length NUM_POKEMON_SPRITES

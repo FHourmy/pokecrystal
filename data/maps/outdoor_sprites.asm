@@ -85,7 +85,7 @@ CeladonGroupSprites:
 	db SPRITE_LASS
 	db SPRITE_BIKER
 	; 6 of max 9 walking sprites
-	db SPRITE_POLIWAG
+	db SPRITE_POLIWRATH
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
@@ -201,7 +201,7 @@ CianwoodGroupSprites:
 	db SPRITE_POKEFAN_F
 	db SPRITE_SUPER_NERD
 	; 9 of max 9 walking sprites
-	db SPRITE_TAUROS
+	db SPRITE_MILTANK
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
 	db SPRITE_YOUNGSTER ; non-walking version of SPRITE_YOUNGSTER
@@ -273,7 +273,7 @@ DungeonsGroupSprites:
 	db SPRITE_SCIENTIST
 	; 8 of max 9 walking sprites
 	db SPRITE_GAMEBOY_KID
-	db SPRITE_GROWLITHE
+	db SPRITE_PERSIAN
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
