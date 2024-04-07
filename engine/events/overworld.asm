@@ -1462,9 +1462,8 @@ HeadbuttScript:
 
 TryHeadbuttOW::
 ; Step 1
-  ld de, ENGINE_HIVEBADGE
-  call CheckEngineFlag
-	jr c, .no
+  checkevent EVENT_GOT_TM02_HEADBUTT
+  iffalse .no
 
 ; Step 2
 	ld d, HEADBUTT
@@ -1597,13 +1596,16 @@ AskRockSmashText:
 	text_end
 
 HasRockSmash:
-; Step 1
+; Step 1 check TM unlocked
+  checkevent EVENT_GOT_TM08_ROCK_SMASH
+  iffalse .no
+; Step 2
 	ld d, ROCK_SMASH
 	call CheckPartyCanLearnMove
   and a
 	jr z, .yes
 
-; Step 2
+; Step 3
 	ld d, ROCK_SMASH
 	call CheckPartyMove
 	jr nc, .yes
