@@ -389,16 +389,17 @@ CanUseFlash:
 	call CheckMonKnowsMove
 	and a
 	jr z, .yes
+
 ; Step 4: Check for TM/HM in bag
-	ld a, HM_FLASH
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	ret nc ; hm isnt in bag
+  ld a, HM_FLASH
+  ld [wCurItem], a
+  ld hl, wNumItems
+  call CheckItem
+  ret nc ; hm isnt in bag
 ; Step 5: Check if Mon can learn move from TM/HM/Move Tutor
-	ld a, FLASH
-	call CheckMonCanLearn_TM_HM
-	jr c, .yes
+  ld a, FLASH
+  call CheckMonCanLearn_TM_HM
+  jr c, .yes
 
 ; Step 6: Check if Mon can learn move from LVL-UP
 	ld a, FLASH
