@@ -3152,7 +3152,7 @@ HeracrossEvosAttacks:
 	db 12, ENDURE
 	db 15, CUT
 	db 19, FURY_ATTACK
-	db 23, ROCK_SMASH
+	db 23, MACH_PUNCH
 	db 27, COUNTER
 	db 35, TAKE_DOWN
 	db 38, SUBMISSION
