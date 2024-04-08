@@ -792,26 +792,26 @@ KantoGrassWildMons:
 	db 28, DODUO
 	db 28, ARBOK
 	db 30, RATICATE
-	db 30, DODUO
-	db 32, PONYTA
-	db 30, DODRIO
-	db 30, DODRIO
+	db 5, CYNDAQUIL
+	db 5, CHIKORITA
+	db 5, TOTODILE
+	db 5, TOTODILE
 	; day
 	db 28, DODUO
 	db 28, ARBOK
 	db 30, RATICATE
-	db 30, DODUO
-	db 32, PONYTA
-	db 30, DODRIO
-	db 30, DODRIO
+	db 5, CHIKORITA
+	db 5, TOTODILE
+	db 5, CYNDAQUIL
+	db 5, CYNDAQUIL
 	; nite
 	db 28, QUAGSIRE
 	db 28, NOCTOWL
 	db 30, RATICATE
-	db 30, QUAGSIRE
-	db 32, NOCTOWL
-	db 32, NOCTOWL
-	db 32, NOCTOWL
+	db 5, TOTODILE
+	db 5, CYNDAQUIL
+	db 5, CHIKORITA
+	db 5, CHIKORITA
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_28
