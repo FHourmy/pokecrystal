@@ -52,6 +52,7 @@ For other pret projects, see [pret.github.io](https://pret.github.io/).
   - lvl 20 -> HITMONTOP
   - lvl 20 holding PUNCHING BAG-> HITMONCHAN
   - lvl 20 holding KICKING BAG-> HITMONLEE
+- New trainer parties strongly inspired by Smith Crystal Legacy https://github.com/cRz-Shadows/Pokemon_Crystal_Legacy
 
 ## Credits
 
