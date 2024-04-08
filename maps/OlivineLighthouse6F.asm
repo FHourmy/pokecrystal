@@ -51,13 +51,7 @@ OlivineLighthouseJasmine:
 	writetext AmphyPaluPaluluText
 	waitbutton
 	closetext
-	turnobject OLIVINELIGHTHOUSE6F_MONSTER, RIGHT
-	pause 10
-	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
-	pause 10
-	turnobject OLIVINELIGHTHOUSE6F_MONSTER, RIGHT
-	pause 10
-	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
+	cry AMPHAROS
 	pause 10
 	faceplayer
 	opentext
