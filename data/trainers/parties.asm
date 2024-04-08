@@ -484,7 +484,8 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (10)
 	db "CHAD@", TRAINERTYPE_NORMAL
-	db 20, MR__MIME
+	db 19, MR__MIME
+	db 19, JYNX
 	db -1 ; end
 
 	; SCHOOLBOY (11)
@@ -1157,6 +1158,7 @@ BeautyGroup:
 
 	; BEAUTY (16)
 	db "VALERIE@", TRAINERTYPE_MOVES
+	db 21, HOPPIP,     SYNTHESIS, TAIL_WHIP, TACKLE, POISONPOWDER
 	db 21, HOPPIP,     SYNTHESIS, TAIL_WHIP, TACKLE, POISONPOWDER
 	db 23, SKIPLOOM,   SYNTHESIS, TAIL_WHIP, TACKLE, STUN_SPORE
 	db -1 ; end
@@ -2114,6 +2116,7 @@ SailorGroup:
 
 	; SAILOR (10)
 	db "HARRY@", TRAINERTYPE_NORMAL
+	db 20, PSYDUCK
 	db 22, WOOPER
 	db -1 ; end
 
@@ -3249,6 +3252,7 @@ PokefanMGroup:
 
 	; POKEFANM (2)
 	db "DEREK@", TRAINERTYPE_ITEM
+	db 22, PICHU,    BERRY
 	db 24, PIKACHU,    BERRY
 	db -1 ; end
 
@@ -3425,6 +3429,7 @@ PokefanFGroup:
 
 	; POKEFANF (2)
 	db "RUTH@", TRAINERTYPE_ITEM
+	db 22, PICHU,    BERRY
 	db 24, PIKACHU,    BERRY
 	db -1 ; end
 
