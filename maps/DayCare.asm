@@ -461,7 +461,7 @@ DayCareText_NamedTakeCare:
   text "GRANNY: Don't"
 	line "worry dear."
 
-	text "We will take"
+	para "We will take"
 	line "care of the"
   cont "other EGGs."
 
