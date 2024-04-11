@@ -94,7 +94,6 @@ OlivineLighthouseJasmine:
 	end
 
 OlivineLighthouseAmphy:
-	faceplayer
 	opentext
 	checkevent EVENT_JASMINE_RETURNED_TO_GYM
 	iftrue .HealthyNow
