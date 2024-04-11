@@ -70,4 +70,7 @@ TrainerClassDVs:
 	dn  7, 14, 10,  8 ; GRUNTF
 	dn  9,  8,  8,  8 ; MYSTICALMAN
 	dn  9,  8,  8,  8 ; SHINYHUNTER
+	dn  9,  8,  8,  8 ; STRONGMAN
+	; dn  9,  8,  8,  8 ; DOCTOR
+	; dn  9,  8,  8,  8 ; GUIDE
 	assert_table_length NUM_TRAINER_CLASSES

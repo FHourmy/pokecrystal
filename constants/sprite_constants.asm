@@ -105,6 +105,9 @@
 	const SPRITE_CHRIS_RUN ; 66
 	const SPRITE_KRIS_RUN ; 67
 	const SPRITE_SHINYHUNTER ; 66
+	; const SPRITE_DOCTOR ; 68
+	const SPRITE_STRONGMAN ; 69
+	; const SPRITE_GUIDE ; 70
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
@@ -168,6 +171,8 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_SPEAROW ;
 	const SPRITE_DRAGONITE ;
 	const SPRITE_AMPHAROS ;
+	const SPRITE_TYROGUE ;
+	const SPRITE_HITMONCHAN ;
 DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)

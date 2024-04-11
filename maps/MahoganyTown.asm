@@ -37,7 +37,6 @@ MahoganyArthurBattleScript:
 	waitbutton
 	closetext
 	winlosstext MahoganyArthurWinText, 0
-	setlasttalked MAHOGANYTOWN_ARTHUR
 	loadtrainer SHINYHUNTER, ARTHUR3
 	startbattle
 	reloadmapafterbattle
@@ -45,7 +44,6 @@ MahoganyArthurBattleScript:
 	writetext MahoganyArthurAfterText
 	waitbutton
 	closetext
-	turnobject PLAYER, LEFT
 	applymovement MAHOGANYTOWN_ARTHUR, MahoganyArthurBattleExitMovement
 	disappear MAHOGANYTOWN_ARTHUR
 	setscene SCENE_MAHOGANYTOWN_NOOP
@@ -158,7 +156,8 @@ MahoganyArthurWinText:
 	line "and giant, but..."
 
 	para "he's not strong."
-	line "Still it looks"
+
+  para "Still it looks"
   cont "AWESOME !!"
 
 	done

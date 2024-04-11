@@ -27,6 +27,9 @@ MaleTrainers:
 	db BIKER
 	db SCIENTIST
 	db SHINYHUNTER
+	db STRONGMAN
+	; db DOCTOR
+	; db GUIDE
 .End
 
 FemaleTrainers:

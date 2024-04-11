@@ -4,6 +4,7 @@
 	const BURNEDTOWER1F_RIVAL
 	const BURNEDTOWER1F_MORTY
 	const BURNEDTOWER1F_POKE_BALL
+	const BURNEDTOWER1F_MATT
 
 BurnedTower1F_MapScripts:
 	def_scene_scripts
@@ -136,6 +137,25 @@ BurnedTower1FHiddenUltraBall:
 
 BurnedTower1FHPUp:
 	itemball HP_UP
+
+BurnedTower1FMatt:
+	trainer STRONGMAN, MATT2, EVENT_BEAT_STRONGMAN_MATT2, StrongmanMatt2SeenText, StrongmanMatt2BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext StrongmanMatt2BeatenText
+	waitbutton
+	closetext
+	end
+
+BurnedTower1FHitmonchan:
+	cry HITMONCHAN
+	opentext
+	writetext BurnedTower1FHitmonchanText
+	waitbutton
+	closetext
+	end
 
 BurnedTowerMovement_PlayerWalksToRival:
 	step LEFT
@@ -275,6 +295,46 @@ BurnedTower1FMortyText:
 	line "TOWER with him."
 	done
 
+StrongmanMatt2SeenText:
+	text "MATT: LEFT-RIGHT!"
+
+	para "LEFT-RI..."
+
+	para "ARG! It's"
+	line "burning in here!"
+
+	para "I came to train"
+	line "my mental with"
+	cont "high temperature."
+
+	para "Wanna check how"
+	line "hot I am ?"
+
+	done
+
+StrongmanMatt2BeatenText:
+	text "OMG! How can"
+	line "you be stronger"
+	cont "than me?"
+
+  para "I'm gonna be the"
+	line "strongest"
+	cont "..."
+
+  para "..."
+  para "...and, my"
+	line "#MON too."
+
+  para "See you next"
+	line "time, gotta hit"
+	cont "the gym."
+
+	done
+
+BurnedTower1FHitmonchanText:
+  text "PUNCH PUNCH"
+	done
+
 BurnedTower1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -307,3 +367,6 @@ BurnedTower1F_MapEvents:
 	object_event  8,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, ObjectEvent, EVENT_RIVAL_BURNED_TOWER
 	object_event 14, 14, SPRITE_MORTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY
 	object_event 14,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHPUp, EVENT_BURNED_TOWER_1F_HP_UP
+	object_event  9,  9, SPRITE_STRONGMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, BurnedTower1FMatt, EVENT_STRONGMAN_MATT_2
+  object_event 10,  9, SPRITE_HITMONCHAN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FHitmonchan, EVENT_STRONGMAN_MATT_2
+	

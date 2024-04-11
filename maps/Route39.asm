@@ -23,6 +23,14 @@ Route39Miltank:
 	closetext
 	end
 
+Route39Tauros:
+	opentext
+	writetext Route39TaurosText
+	cry TAUROS
+	waitbutton
+	closetext
+	end
+
 TrainerPokefanmDerek:
 	trainer POKEFANM, DEREK1, EVENT_BEAT_POKEFANM_DEREK, PokefanmDerekSeenText, PokefanmDerekBeatenText, 0, .Script
 
@@ -180,8 +188,25 @@ Route39FruitTree:
 Route39HiddenNugget:
 	hiddenitem NUGGET, EVENT_ROUTE_39_HIDDEN_NUGGET
 
+Route39StrongmanMattScript:
+  playsound SFX_STRENGTH
+	earthquake 80
+	pause 30
+	waitsfx
+	jumptextfaceplayer Route39StrongmanMattText
+
+Route39StrongmanMattText:
+	text "UUUUUUUUURG !!!"
+	line "Move i'm training."
+
+	done
+
 Route39MiltankText:
 	text "MILTANK: Mooo!"
+	done
+
+Route39TaurosText:
+	text "TAUROS: Mooo!"
 	done
 
 SailorEugeneSeenText:
@@ -367,3 +392,5 @@ Route39_MapEvents:
 	object_event 13,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicNorman, -1
 	object_event  9,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
 	object_event  4, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, -1
+	object_event 15, 13, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route39Tauros, -1
+	object_event 15, 14, SPRITE_STRONGMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39StrongmanMattScript, EVENT_STRONGMAN_MATT_2

@@ -6,6 +6,7 @@
 	const VICTORYROAD_POKE_BALL4
 	const VICTORYROAD_POKE_BALL5
 	const VICTORYROAD_ARTHUR
+	const VICTORYROAD_MATT
 
 VictoryRoad_MapScripts:
 	def_scene_scripts
@@ -102,6 +103,17 @@ TrainerShinyHunterArthurVictoryRoad:
 	endifjustbattled
 	opentext
 	writetext ShinyHunterArthur4BeatenText
+	waitbutton
+	closetext
+	end
+
+TrainerStrongmanMattVictoryRoad:
+	trainer SHINYHUNTER, MATT4, EVENT_BEAT_STRONGMAN_MATT4, StrongmanMatt4SeenText, StrongmanMatt4BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext StrongmanMatt4BeatenText
 	waitbutton
 	closetext
 	end
@@ -278,6 +290,44 @@ ShinyHunterArthur4BeatenText:
 
 	done
 
+StrongmanMatt4SeenText:
+	text "MATT: Hey you."
+
+  para "I'm going to"
+	line "challenge BRUNO."
+
+  para "He is an Elite 4"
+	line "Member."
+
+  para "And he is the"
+	line "STRONGEST man in"
+	cont "Johto and Kanto!"
+
+  para "Once i beat him"
+	line "i will be the"
+	cont "STRONGEST!"
+
+  para "Oh!"
+
+  para "you want a"
+	line "#MON battle ?"
+	cont "Sure."
+
+	done
+
+StrongmanMatt4BeatenText:
+	text "Well, you sure"
+	line "have a chance at"
+	cont "the league."
+
+  para "We will fight"
+	line "again when we"
+	cont "will be"
+  
+  para "THE STRONGEST !"
+
+	done
+
 VictoryRoad_MapEvents:
 	db 0, 0 ; filler
 
@@ -309,4 +359,7 @@ VictoryRoad_MapEvents:
 	object_event 15, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullHeal, EVENT_VICTORY_ROAD_FULL_HEAL
 	object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadHPUp, EVENT_VICTORY_ROAD_HP_UP
   object_event  9, 59, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerShinyHunterArthurVictoryRoad, EVENT_SHINYHUNTER_ARTHUR_4
+  object_event 10, 59, SPRITE_STRONGMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerStrongmanMattVictoryRoad, EVENT_STRONGMAN_MATT_4
+  ; object_event  9, 51, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerShinyHunterArthurVictoryRoad, EVENT_SHINYHUNTER_ARTHUR_4
+  ; object_event 10, 51, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerShinyHunterArthurVictoryRoad, EVENT_SHINYHUNTER_ARTHUR_4
 	

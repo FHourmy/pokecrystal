@@ -71,4 +71,7 @@ TrainerPicPointers::
 	dba GruntfPic
 	dba MysticalmanPic
 	dba ShinyhunterPic
+	dba StrongmanPic
+	; dba DoctorPic
+	; dba GuidePic
 	assert_table_length NUM_TRAINER_CLASSES

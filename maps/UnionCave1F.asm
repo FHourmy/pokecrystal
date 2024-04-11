@@ -8,6 +8,7 @@
 	const UNIONCAVE1F_POKE_BALL2
 	const UNIONCAVE1F_POKE_BALL3
 	const UNIONCAVE1F_POKE_BALL4
+	const UNIONCAVE1F_MATT
 
 UnionCave1F_MapScripts:
 	def_scene_scripts
@@ -65,6 +66,25 @@ TrainerFirebreatherRay:
 	endifjustbattled
 	opentext
 	writetext FirebreatherRayAfterBattleText
+	waitbutton
+	closetext
+	end
+
+UnionCave1FMatt:
+	trainer STRONGMAN, MATT1, EVENT_BEAT_STRONGMAN_MATT1, StrongmanMatt1SeenText, StrongmanMatt1BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext StrongmanMatt1BeatenText
+	waitbutton
+	closetext
+	end
+
+UnionCave1FTyrogue:
+	cry TYROGUE
+	opentext
+	writetext UnionCave1FTyrogueText
 	waitbutton
 	closetext
 	end
@@ -193,6 +213,28 @@ FirebreatherRayAfterBattleText:
 	cont "up this cave."
 	done
 
+StrongmanMatt1SeenText:
+	text "MATT: LEFT-RIGHT!"
+
+	para "LEFT-RIGHT!"
+
+	para "LEFT-RIGHT!"
+
+	para "What ? You"
+	line "wanna train ?"
+
+	done
+
+StrongmanMatt1BeatenText:
+	text "Nice sparring !"
+	line "I already feel"
+	cont "stronger."
+	done
+
+UnionCave1FTyrogueText:
+  text "PUNCH PUNCH"
+	done
+
 UnionCave1FUnusedSignText:
 	text "UNION CAVE"
 	done
@@ -220,3 +262,6 @@ UnionCave1F_MapEvents:
 	object_event  4,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FXAttack, EVENT_UNION_CAVE_1F_X_ATTACK
 	object_event  4, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FPotion, EVENT_UNION_CAVE_1F_POTION
 	object_event 12, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FAwakening, EVENT_UNION_CAVE_1F_AWAKENING
+	object_event 6,  2,  SPRITE_STRONGMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, UnionCave1FMatt, EVENT_STRONGMAN_MATT_1
+  object_event 7,  2,  SPRITE_TYROGUE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UnionCave1FTyrogue, EVENT_STRONGMAN_MATT_1
+	

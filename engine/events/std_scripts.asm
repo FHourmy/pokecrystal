@@ -613,6 +613,7 @@ InitializeEventsScript:
 	setevent EVENT_SHINYHUNTER_ARTHUR_1
 	setevent EVENT_SHINYHUNTER_ARTHUR_2; needs to be set to not appear visible during cutscene
 	setevent EVENT_SHINYHUNTER_ARTHUR_3; needs to be set to not appear visible during cutscene
+	setevent EVENT_STRONGMAN_MATT_3; needs to be set to not appear visible during cutscene
 	setevent EVENT_INITIALIZED_EVENTS
 	setevent EVENT_MART_TM_2
 	endcallback

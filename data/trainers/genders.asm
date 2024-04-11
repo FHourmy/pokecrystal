@@ -71,4 +71,7 @@ BTTrainerClassGenders:
 	db FEMALE ; GRUNTF
   db MALE   ; MYSTICALMAN
   db MALE   ; SHINYHUNTER
+  db MALE   ; STRONGMAN
+  ; db MALE   ; DOCTOR
+  ; db MALE   ; GUIDE
   assert_table_length NUM_TRAINER_CLASSES

@@ -111,3 +111,6 @@ SECTION "Sprites 3", ROMX
 ChrisRunSpriteGFX::            INCBIN "gfx/sprites/chris_run.2bpp"
 KrisRunSpriteGFX::             INCBIN "gfx/sprites/kris_run.2bpp"
 ShinyhunterSpriteGFX::         INCBIN "gfx/sprites/shinyhunter.2bpp"
+StrongmanSpriteGFX::           INCBIN "gfx/sprites/strongman.2bpp"
+; DoctorSpriteGFX::              INCBIN "gfx/sprites/doctor.2bpp"
+; GuideSpriteGFX::               INCBIN "gfx/sprites/guide.2bpp"

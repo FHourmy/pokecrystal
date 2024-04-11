@@ -59,4 +59,6 @@ SpriteMons:
 	db SPEAROW
 	db DRAGONITE
 	db AMPHAROS
+	db TYROGUE
+	db HITMONCHAN
 	assert_table_length NUM_POKEMON_SPRITES

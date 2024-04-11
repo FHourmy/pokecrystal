@@ -211,6 +211,8 @@ CianwoodGroupSprites:
 	db SPRITE_ROCK
 	db SPRITE_YOUNGSTER ; non-walking version of SPRITE_YOUNGSTER
 	db SPRITE_SUICUNE
+	db SPRITE_TAUROS
+	db SPRITE_STRONGMAN
 	db 0 ; end
 
 MahoganyGroupSprites:
