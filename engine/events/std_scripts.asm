@@ -610,7 +610,9 @@ InitializeEventsScript:
 	setevent EVENT_MT_MOON_SQUARE_CLEFAIRY
 	setevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
-	setevent EVENT_ROUTE_29_SHINYHUNTER_ARTHUR
+	setevent EVENT_SHINYHUNTER_ARTHUR_1
+	setevent EVENT_SHINYHUNTER_ARTHUR_2; needs to be set to not appear visible during cutscene
+	setevent EVENT_SHINYHUNTER_ARTHUR_3; needs to be set to not appear visible during cutscene
 	setevent EVENT_INITIALIZED_EVENTS
 	setevent EVENT_MART_TM_2
 	endcallback

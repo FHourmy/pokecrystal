@@ -11,6 +11,7 @@
 	const LAKEOFRAGE_WESLEY
 	const LAKEOFRAGE_POKE_BALL1
 	const LAKEOFRAGE_POKE_BALL2
+	const LAKEOFRAGE_ARTHUR
 
 LakeOfRage_MapScripts:
 	def_scene_scripts
@@ -115,6 +116,14 @@ LakeOfRageGrampsScript:
 
 .ClearedRocketHideout:
 	writetext LakeOfRageGrampsText_ClearedRocketHideout
+	waitbutton
+	closetext
+	end
+
+LakeOfRageArthurScript:
+	faceplayer
+	opentext
+	writetext LakeOfRageArthurText
 	waitbutton
 	closetext
 	end
@@ -319,6 +328,16 @@ LakeOfRageGotRedScaleText:
 	line "RED SCALE."
 	done
 
+LakeOfRageArthurText:
+	text "I've heard of"
+	line "a golden"
+  cont "magikarp."
+
+  text "I'm fishing"
+	line "until i catch"
+  cont "it !"
+	done
+
 LakeOfRageGrampsText:
 	text "The GYARADOS are"
 	line "angry!"
@@ -520,3 +539,4 @@ LakeOfRage_MapEvents:
 	object_event  4,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WesleyScript, EVENT_LAKE_OF_RAGE_WESLEY_OF_WEDNESDAY
 	object_event  7, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageElixer, EVENT_LAKE_OF_RAGE_ELIXER
 	object_event 35,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LakeOfRageTMDetect, EVENT_LAKE_OF_RAGE_TM_DETECT
+  object_event 18, 28, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LakeOfRageArthurScript, EVENT_TEAM_ROCKET_BASE_POPULATION

@@ -12,12 +12,21 @@
 	const ROUTE34_COOLTRAINER_F2
 	const ROUTE34_COOLTRAINER_F3
 	const ROUTE34_POKE_BALL
+	const ROUTE34_ARTHUR
 
 Route34_MapScripts:
 	def_scene_scripts
+	scene_script Route34Noop1Scene, SCENE_ROUTE_34_NOOP
+	scene_script Route34Noop2Scene, SCENE_DAYCARE_ARTHUR_BATTLE
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, Route34EggCheckCallback
+
+Route34Noop1Scene:
+	end
+
+Route34Noop2Scene:
+	end
 
 Route34EggCheckCallback:
 	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
@@ -50,6 +59,40 @@ Route34EggCheckCallback:
 .HideMon2:
 	setevent EVENT_DAY_CARE_MON_2
 	endcallback
+
+DaycareArthurBattleScene1:
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	appear ROUTE34_ARTHUR
+	applymovement ROUTE34_ARTHUR, DaycareArthurBattleApproachMovement1
+	sjump DaycareArthurBattleScript
+
+DaycareArthurBattleScene2:
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	appear ROUTE34_ARTHUR
+	applymovement ROUTE34_ARTHUR, DaycareArthurBattleApproachMovement2
+
+DaycareArthurBattleScript:
+	opentext
+	writetext DaycareArthurBeforeText
+	waitbutton
+	closetext
+	winlosstext DaycareArthurWinText, 0
+	setlasttalked ROUTE34_ARTHUR
+	loadtrainer SHINYHUNTER, ARTHUR2
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext DaycareArthurAfterText
+	waitbutton
+	closetext
+	turnobject PLAYER, LEFT
+	applymovement ROUTE34_ARTHUR, DaycareArthurBattleExitMovement
+	disappear ROUTE34_ARTHUR
+	setscene SCENE_ROUTE_34_NOOP
+	waitsfx
+	end
 
 DayCareManScript_Outside:
 	faceplayer
@@ -505,6 +548,35 @@ Route34MovementData_DayCareManWalksBackInside_WalkAroundPlayer:
 	slow_step UP
 	step_end
 
+DaycareArthurBattleApproachMovement1:
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step_end
+
+DaycareArthurBattleApproachMovement2:
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step DOWN
+	step_end
+
+DaycareArthurBattleExitMovement:
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step UP
+	step_end
+
 YoungsterSamuelSeenText:
 	text "This is where I do"
 	line "my training!"
@@ -758,6 +830,41 @@ DayCareSignText:
 	line "#MON FOR YOU!"
 	done
 
+DaycareArthurBeforeText:
+	text "ARTHUR: Look look!"
+	line "I've got some"
+	cont "new shinies !"
+	done
+
+DaycareArthurWinText:
+	text "Wah you are"
+	line "really strong !"
+
+	para "But still my"
+	line "#MON are"
+  cont "way more cool."
+
+	done
+
+DaycareArthurAfterText:
+	text "I've got my"
+	line "IGGLYBUFF at"
+	cont "the daycare."
+
+	para "I've been"
+	line "breeding #MON"
+	cont "there."
+
+	para "I left some EGGs."
+	line "I think you can"
+	cont "ask for one."
+
+	para "I'm gonna look"
+	line "for other cool"
+	cont "#MON. Bye!"
+
+	done
+
 Route34_MapEvents:
 	db 0, 0 ; filler
 
@@ -769,6 +876,8 @@ Route34_MapEvents:
 	warp_event 13, 15, DAY_CARE, 3
 
 	def_coord_events
+	coord_event 13, 36, SCENE_DAYCARE_ARTHUR_BATTLE, DaycareArthurBattleScene1
+	coord_event 14, 36, SCENE_DAYCARE_ARTHUR_BATTLE, DaycareArthurBattleScene2
 
 	def_bg_events
 	bg_event 12,  6, BGEVENT_READ, Route34Sign
@@ -791,3 +900,4 @@ Route34_MapEvents:
 	object_event  3, 48, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfJenn, -1
 	object_event  6, 51, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfKate, -1
 	object_event  7, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route34Nugget, EVENT_ROUTE_34_NUGGET
+  object_event 16, 31, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SHINYHUNTER_ARTHUR_2

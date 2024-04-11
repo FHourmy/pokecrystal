@@ -5,6 +5,7 @@
 	const VICTORYROAD_POKE_BALL3
 	const VICTORYROAD_POKE_BALL4
 	const VICTORYROAD_POKE_BALL5
+	const VICTORYROAD_ARTHUR
 
 VictoryRoad_MapScripts:
 	def_scene_scripts
@@ -90,6 +91,17 @@ VictoryRoadRivalNext:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext VictoryRoadRivalAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerShinyHunterArthurVictoryRoad:
+	trainer SHINYHUNTER, ARTHUR4, EVENT_BEAT_SHINYHUNTER_ARTHUR4, ShinyHunterArthur4SeenText, ShinyHunterArthur4BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ShinyHunterArthur4BeatenText
 	waitbutton
 	closetext
 	end
@@ -236,6 +248,36 @@ VictoryRoadRivalVictoryText:
 	line "thing else."
 	done
 
+ShinyHunterArthur4SeenText:
+	text "ARTHUR: Look look!"
+	line "I have trained"
+	cont "hard !"
+
+  para "I will challenge"
+	line "the elite 4."
+
+  para "I will show that"
+	line "cool #MON"
+	cont "can be strong !"
+
+	done
+
+ShinyHunterArthur4BeatenText:
+	text "Awh... I'm still"
+	line "not this strong."
+
+  para "But my"
+	line "#MON are"
+	cont "beautiful !"
+
+  para "I'll keep"
+	line "training and"
+	cont "prove their"
+
+  para "strength."
+
+	done
+
 VictoryRoad_MapEvents:
 	db 0, 0 ; filler
 
@@ -266,3 +308,5 @@ VictoryRoad_MapEvents:
 	object_event 18, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullRestore, EVENT_VICTORY_ROAD_FULL_RESTORE
 	object_event 15, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullHeal, EVENT_VICTORY_ROAD_FULL_HEAL
 	object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadHPUp, EVENT_VICTORY_ROAD_HP_UP
+  object_event  9, 59, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerShinyHunterArthurVictoryRoad, EVENT_SHINYHUNTER_ARTHUR_4
+	

@@ -703,7 +703,17 @@ DEF KRIS EQU __trainer_class__
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
 
-  trainerclass SHINYHUNTER ; 43
+  trainerclass SHINYHUNTER ; 44
 	const ARTHUR1
+	const ARTHUR2
+	const ARTHUR3
+	const ARTHUR4
+	const ARTHUR5
+  ; trainerclass DOCTOR ; 45
+  ; const PHIL1
+  ; trainerclass STRONGMAN ; 46
+  ; const MATT1
+  ; trainerclass GUIDE ; 47
+  ; const HUGO1
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

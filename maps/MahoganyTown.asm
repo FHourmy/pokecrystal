@@ -4,10 +4,11 @@ DEF MAHOGANYTOWN_RAGECANDYBAR_PRICE EQU 300
 	const MAHOGANYTOWN_GRAMPS
 	const MAHOGANYTOWN_FISHER
 	const MAHOGANYTOWN_LASS
+	const MAHOGANYTOWN_ARTHUR
 
 MahoganyTown_MapScripts:
 	def_scene_scripts
-	scene_script MahoganyTownNoop1Scene, SCENE_MAHOGANYTOWN_TRY_RAGECANDYBAR
+	scene_script MahoganyTownNoop1Scene, SCENE_MAHOGANYTOWN_ARTHUR_BATTLE
 	scene_script MahoganyTownNoop2Scene, SCENE_MAHOGANYTOWN_NOOP
 
 	def_callbacks
@@ -22,6 +23,34 @@ MahoganyTownNoop2Scene:
 MahoganyTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_MAHOGANY
 	endcallback
+
+MahoganyArthurBattleScene:
+	turnobject PLAYER, RIGHT
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	appear MAHOGANYTOWN_ARTHUR
+	applymovement MAHOGANYTOWN_ARTHUR, MahoganyArthurBattleApproachMovement
+
+MahoganyArthurBattleScript:
+	opentext
+	writetext MahoganyArthurBeforeText
+	waitbutton
+	closetext
+	winlosstext MahoganyArthurWinText, 0
+	setlasttalked MAHOGANYTOWN_ARTHUR
+	loadtrainer SHINYHUNTER, ARTHUR3
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext MahoganyArthurAfterText
+	waitbutton
+	closetext
+	turnobject PLAYER, LEFT
+	applymovement MAHOGANYTOWN_ARTHUR, MahoganyArthurBattleExitMovement
+	disappear MAHOGANYTOWN_ARTHUR
+	setscene SCENE_MAHOGANYTOWN_NOOP
+	waitsfx
+	end
 
 MahoganyTownGrampsScript:
 	faceplayer
@@ -118,6 +147,53 @@ MahoganyGymSignText:
 	line "Winter's Harshness"
 	done
 
+MahoganyArthurBeforeText:
+	text "ARTHUR: Look look!"
+	line "I've got a gold"
+	cont "giant MAGIKARP !"
+	done
+
+MahoganyArthurWinText:
+	text "MAGIKARP is gold"
+	line "and giant, but..."
+
+	para "he's not strong."
+	line "Still it looks"
+  cont "AWESOME !!"
+
+	done
+
+MahoganyArthurAfterText:
+	text "It took me"
+	line "fishing 8192"
+	cont "MAGIKARP."
+
+	para "I've got a lot"
+	line "of cool"
+	cont "#MON now."
+
+	para "I thinks i'm"
+	line "going to train"
+	cont "for a bit now."
+
+	para "See you !"
+
+	done
+
+MahoganyArthurBattleApproachMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
+MahoganyArthurBattleExitMovement:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
+
 MahoganyTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -129,6 +205,7 @@ MahoganyTown_MapEvents:
 	warp_event  9,  1, ROUTE_43_MAHOGANY_GATE, 3
 
 	def_coord_events
+	coord_event 6, 14, SCENE_MAHOGANYTOWN_ARTHUR_BATTLE, MahoganyArthurBattleScene
 
 	def_bg_events
 	bg_event  1,  5, BGEVENT_READ, MahoganyTownSign
@@ -140,3 +217,4 @@ MahoganyTown_MapEvents:
 	object_event  6,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrampsScript, -1
 	object_event  6, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisherScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_GYM
 	object_event 12,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLassScript, EVENT_MAHOGANY_MART_OWNERS
+  object_event 11, 14, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SHINYHUNTER_ARTHUR_3

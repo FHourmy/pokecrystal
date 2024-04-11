@@ -132,6 +132,9 @@ CherrygroveGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	; max 9 of 9 walking sprites
 	db SPRITE_SHINYHUNTER
+	; db SPRITE_DOCTOR
+	; db SPRITE_STRONGMAN
+	; db SPRITE_GUIDE
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
@@ -180,7 +183,8 @@ GoldenrodGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_ROCKET
 	db SPRITE_LASS
-	; 7 of max 9 walking sprites
+	db SPRITE_SHINYHUNTER
+	; 8 of max 9 walking sprites
   db SPRITE_EGG
 	db SPRITE_DAY_CARE_MON_1
 	db SPRITE_DAY_CARE_MON_2
@@ -219,7 +223,8 @@ MahoganyGroupSprites:
 	db SPRITE_POKEFAN_M
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_FISHER
-	; 8 of max 9 walking sprites
+	db SPRITE_SHINYHUNTER
+	; 9 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
 	db SPRITE_SUICUNE
@@ -236,6 +241,7 @@ LakeOfRageGroupSprites:
 	db SPRITE_LASS
 	db SPRITE_YOUNGSTER
 	; 8 of max 9 walking sprites
+	db SPRITE_SHINYHUNTER
 	db SPRITE_GYARADOS
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL

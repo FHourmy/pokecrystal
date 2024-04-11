@@ -30,6 +30,7 @@ HallOfFameEnterScript:
 	pause 15
 	setval HEALMACHINE_HALL_OF_FAME
 	special HealMachineAnim
+	setevent EVENT_SHINYHUNTER_ARTHUR_4; remove arthur from victory road
 	setevent EVENT_BEAT_ELITE_FOUR
   clearevent EVENT_MART_TM_2
 	setevent EVENT_TELEPORT_GUY

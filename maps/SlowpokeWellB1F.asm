@@ -8,6 +8,7 @@
 	const SLOWPOKEWELLB1F_KURT
 	const SLOWPOKEWELLB1F_BOULDER
 	const SLOWPOKEWELLB1F_POKE_BALL
+	const SLOWPOKEWELLB1F_ARTHUR
 
 SlowpokeWellB1F_MapScripts:
 	def_scene_scripts
@@ -42,6 +43,7 @@ TrainerGruntM1:
 	disappear SLOWPOKEWELLB1F_ROCKET2
 	disappear SLOWPOKEWELLB1F_ROCKET3
 	disappear SLOWPOKEWELLB1F_ROCKET_GIRL
+	disappear SLOWPOKEWELLB1F_ARTHUR
 	pause 15
 	special FadeInFromBlack
 	disappear SLOWPOKEWELLB1F_KURT
@@ -53,8 +55,10 @@ TrainerGruntM1:
 	writetext KurtLeaveSlowpokeWellText
 	waitbutton
 	closetext
+	setevent EVENT_SHINYHUNTER_ARTHUR_1
 	setevent EVENT_CLEARED_SLOWPOKE_WELL
 	setmapscene AZALEA_TOWN, SCENE_AZALEATOWN_RIVAL_BATTLE
+	setmapscene ROUTE_34, SCENE_DAYCARE_ARTHUR_BATTLE
 	clearevent EVENT_ILEX_FOREST_APPRENTICE
 	clearevent EVENT_ILEX_FOREST_FARFETCHD
 	setevent EVENT_CHARCOAL_KILN_FARFETCH_D
@@ -116,6 +120,9 @@ SlowpokeWellB1FTaillessSlowpokeScript:
 	waitbutton
 	closetext
 	end
+
+SlowpokeWellB1FArthurScript:
+	jumptextfaceplayer SlowpokeWellB1FArthurText
 
 SlowpokeWellB1FBoulder:
 	jumpstd StrengthBoulderScript
@@ -181,6 +188,20 @@ KurtLeaveSlowpokeWellText:
 	para "My back's better"
 	line "too. Let's get out"
 	cont "of here."
+	done
+
+SlowpokeWellB1FArthurText:
+	text "ARTHUR: I was"
+	line "so lucky !"
+
+	para "The first GRIMER"
+	line "I saw was shiny !"
+
+	para "But then TEAM"
+	line "ROCKET appeared."
+
+	para "And now i'm stuck"
+	line "here..."
 	done
 
 GruntM29SeenText:
@@ -338,3 +359,4 @@ SlowpokeWellB1F_MapEvents:
 	object_event 16, 14, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FKurtScript, EVENT_SLOWPOKE_WELL_KURT
 	object_event  3,  2, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FBoulder, -1
 	object_event 10,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB1FSuperPotion, EVENT_SLOWPOKE_WELL_B1F_SUPER_POTION
+  object_event 14, 15, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FArthurScript, EVENT_SLOWPOKE_WELL_ROCKETS

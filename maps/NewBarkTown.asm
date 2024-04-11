@@ -104,6 +104,9 @@ NewBarkTownTeacherScript:
 NewBarkTownFisherScript:
 	jumptextfaceplayer Text_ElmDiscoveredNewMon
 
+NewBarkTownArthurScript:
+	jumptextfaceplayer Text_Arthur_Waiting
+
 NewBarkTownRivalScript:
 	opentext
 	writetext NewBarkTownRivalText1
@@ -185,6 +188,14 @@ NewBarkTown_RivalShovesYouOutMovement:
 NewBarkTown_RivalReturnsToTheShadowsMovement:
 	step RIGHT
 	step_end
+
+Text_Arthur_Waiting:
+  text "I'm waiting for"
+  line "the PROF to give"
+  
+  para "me a #MON"
+  line "really special."
+	done
 
 Text_GearIsImpressive:
 	text "Wow, your #GEAR"
@@ -302,3 +313,7 @@ NewBarkTown_MapEvents:
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRivalScript, EVENT_RIVAL_NEW_BARK_TOWN
+	object_event  8,  4, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownArthurScript, EVENT_RIVAL_NEW_BARK_TOWN
+	; object_event  8,  6, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
+	; object_event  7,  7, SPRITE_STRONGMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
+	; object_event  8,  9, SPRITE_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
