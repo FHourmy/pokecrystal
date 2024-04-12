@@ -1480,6 +1480,16 @@
 	const EVENT_STRONGMAN_MATT_2
 	const EVENT_STRONGMAN_MATT_3
 	const EVENT_STRONGMAN_MATT_4
+	const EVENT_BEAT_DOCTOR_PHIL3; national park
+	const EVENT_BEAT_DOCTOR_PHIL7; victory road
+	const EVENT_BEAT_DOCTOR_PHIL8; victory road
+	const EVENT_DOCTOR_PHIL_1; rattata
+	const EVENT_DOCTOR_PHIL_2; slowpoke well
+	const EVENT_DOCTOR_PHIL_3; national park
+	const EVENT_DOCTOR_PHIL_4; cutscene lighthouse 6f
+	const EVENT_DOCTOR_PHIL_5; cianwood pharmacy
+	const EVENT_DOCTOR_PHIL_6; battle lighthouse 5f
+	const EVENT_DOCTOR_PHIL_7; victory road
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800

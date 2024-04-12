@@ -10,6 +10,14 @@ CianwoodPharmacy_MapScripts:
 CianwoodPharmacyNoopScene:
 	end
 
+CianwoodDoctorPhil:
+	faceplayer
+	opentext
+	writetext CianwoodPharmacyDoctorPhilText
+	waitbutton
+	closetext
+	end
+
 CianwoodPharmacist:
 	faceplayer
 	opentext
@@ -25,6 +33,7 @@ CianwoodPharmacist:
 	waitsfx
 	itemnotify
 	setevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY
+  setmapscene OLIVINE_LIGHTHOUSE_5F, SCENE_OLIVINE_LIGHTHOUSE_5F_DOCTOR_PHIL_BATTLE
 	writetext PharmacistDescribeSecretpotionText
 	waitbutton
 	closetext
@@ -70,6 +79,16 @@ PharmacistDescribeSecretpotionText:
 	line "an emergency."
 	done
 
+CianwoodPharmacyDoctorPhilText:
+	text "I'm studying the"
+	line "SECRETPOTION"
+
+	para "I don't think it"
+	line "is enough for"
+  cont "AMPHAROS..."
+
+	done
+
 CianwoodPharmacy_MapEvents:
 	db 0, 0 ; filler
 
@@ -85,3 +104,4 @@ CianwoodPharmacy_MapEvents:
 
 	def_object_events
 	object_event  2,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodPharmacist, -1
+	object_event  5,  4, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPharmacist, EVENT_DOCTOR_PHIL_5

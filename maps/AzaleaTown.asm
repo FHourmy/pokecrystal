@@ -11,15 +11,20 @@
 	const AZALEATOWN_RIVAL
 	const AZALEATOWN_AZALEA_ROCKET3
 	const AZALEATOWN_KURT_OUTSIDE
+	const AZALEATOWN_DOCTOR_PHIL
 
 AzaleaTown_MapScripts:
 	def_scene_scripts
+	scene_script AzaleaTownNoop0Scene, SCENE_AZALEATOWN_DOCTOR_PHIL_BATTLE
 	scene_script AzaleaTownNoop1Scene, SCENE_AZALEATOWN_NOOP
 	scene_script AzaleaTownNoop2Scene, SCENE_AZALEATOWN_RIVAL_BATTLE
 	scene_script AzaleaTownNoop3Scene, SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, AzaleaTownFlypointCallback
+
+AzaleaTownNoop0Scene:
+	end
 
 AzaleaTownNoop1Scene:
 	end
@@ -33,6 +38,39 @@ AzaleaTownNoop3Scene:
 AzaleaTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_AZALEA
 	endcallback
+
+AzaleaTownDoctorPhilScene:
+	turnobject PLAYER, DOWN
+	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	appear AZALEATOWN_DOCTOR_PHIL
+	applymovement AZALEATOWN_DOCTOR_PHIL, AzaleaTownDoctorPhilBattleApproachMovement
+
+AzaleaTownDoctorPhilBattleScript:
+	opentext
+	writetext AzaleaTownDoctorPhilBeforeText1
+	waitbutton
+	closetext
+  showemote EMOTE_SHOCK, PLAYER, 15
+  showemote EMOTE_SHOCK, AZALEATOWN_DOCTOR_PHIL, 15
+	pause 15
+	writetext AzaleaTownDoctorPhilBeforeText2
+	waitbutton
+	closetext
+	winlosstext AzaleaTownDoctorPhilWinText, 0
+	loadtrainer DOCTOR, PHIL1
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext AzaleaTownDoctorPhilAfterText
+	waitbutton
+	closetext
+	applymovement AZALEATOWN_DOCTOR_PHIL, AzaleaTownDoctorPhilBattleExitMovement
+	setevent EVENT_DOCTOR_PHIL_1
+	disappear AZALEATOWN_DOCTOR_PHIL
+	setscene SCENE_AZALEATOWN_NOOP
+	waitsfx
+	end
 
 AzaleaTownRivalBattleScene1:
 	moveobject AZALEATOWN_RIVAL, 11, 11
@@ -209,6 +247,21 @@ WhiteApricornTree:
 
 AzaleaTownHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_AZALEA_TOWN_HIDDEN_FULL_HEAL
+
+AzaleaTownDoctorPhilBattleApproachMovement:
+	step UP
+	step UP
+	step UP
+	step UP
+  step_end
+
+AzaleaTownDoctorPhilBattleExitMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
 
 AzaleaTownRivalBattleApproachMovement1:
 	step LEFT
@@ -452,6 +505,63 @@ AzaleaTownIlexForestSignText:
 	line "gate."
 	done
 
+  AzaleaTownDoctorPhilBeforeText1:
+	text "DR PHIL: You !"
+
+	para "I need"
+	line "SLOWPOKETAIL"
+  cont "because..."
+
+	para "My RATTATAs are"
+	line "sick !"
+
+	para "I heard"
+	line "SLOWPOKETAIL have"
+	line "medical properties"
+
+	para "I need one to"
+	line "experi..."
+
+  done
+
+  AzaleaTownDoctorPhilBeforeText2:
+	text "I mean to cure"
+	line "my RATTATAs"
+  cont "obviously !"
+
+	para "You don't believe"
+	line "me ?"
+
+	para "Will see that"
+	line "after a fight !"
+
+  done
+
+AzaleaTownDoctorPhilWinText:
+	text "Pffff..."
+
+	para "No wonder why"
+  line "science doesn't"
+  cont "progress."
+
+	done
+
+AzaleaTownDoctorPhilAfterText:
+	text "What do you"
+	line "mean, you don't"
+	cont "have SLOWPOKETAIL"
+
+	para "What a waste of"
+	line "time !"
+
+	para "I'll get one"
+	line "somewhere else."
+
+	para "SCIENCE DOESN'T"
+	line "WAIT !!!"
+
+	done
+
 AzaleaTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -469,6 +579,7 @@ AzaleaTown_MapEvents:
 	coord_event  5, 10, SCENE_AZALEATOWN_RIVAL_BATTLE, AzaleaTownRivalBattleScene1
 	coord_event  5, 11, SCENE_AZALEATOWN_RIVAL_BATTLE, AzaleaTownRivalBattleScene2
 	coord_event  9,  6, SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL, AzaleaTownCelebiScene
+	coord_event 31,  9, SCENE_AZALEATOWN_DOCTOR_PHIL_BATTLE, AzaleaTownDoctorPhilScene
 
 	def_bg_events
 	bg_event 19,  9, BGEVENT_READ, AzaleaTownSign
@@ -494,3 +605,4 @@ AzaleaTown_MapEvents:
 	object_event 11, 10, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_AZALEA_TOWN
 	object_event 10, 16, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownRocket2Script, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  6,  5, SPRITE_KURT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownKurtScript, EVENT_AZALEA_TOWN_KURT
+	object_event 31,  4, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DOCTOR_PHIL_2

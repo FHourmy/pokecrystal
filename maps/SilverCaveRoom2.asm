@@ -98,38 +98,47 @@ StrongmanMatt5BeatenText:
 
 	done
 
-;; PHIL
-; TrainerShinyHunterArthurSilverCave:
-; 	trainer SHINYHUNTER, ARTHUR5, EVENT_BEAT_SHINYHUNTER_ARTHUR5, ShinyHunterArthur5SeenText, ShinyHunterArthur5BeatenText, 0, .Script
+TrainerDoctorPhilSilverCave:
+	trainer DOCTOR, PHIL5, EVENT_BEAT_DOCTOR_PHIL8, DoctorPhil5SeenText, DoctorPhil5BeatenText, 0, .Script
 
-; .Script:
-; 	endifjustbattled
-; 	opentext
-; 	writetext ShinyHunterArthur5BeatenText
-; 	waitbutton
-; 	closetext
-; 	end
+.Script:
+	endifjustbattled
+	opentext
+	writetext ShinyHunterArthur5BeatenText
+	waitbutton
+	closetext
+	end
 
-; ShinyHunterArthur5SeenText:
-; 	text "ARTHUR: Look look!"
-; 	line "I am a top trainer"
+DoctorPhil5SeenText:
+	text "DR PHIL: Hello."
 
-;   para "I will show you"
-; 	line "one last time..."
+  para "I have perfected"
+	line "my cure. and a new"
+	cont "stimulant !"
 
-;   para "HOW COOL MY"
-; 	line "#MON ARE !!!"
+  para "I have also used"
+	line "the side effect."
 
-; 	done
+  para "I created a super"
+	line "stimulant !"
+	cont "See its effects!"
 
-; ShinyHunterArthur5BeatenText:
-; 	text "You are awesome!"
+	done
 
-;   para "Good luck with"
-; 	line "the others"
-; 	cont "beautiful !"
+DoctorPhil5BeatenText:
+	text "Well, the stimulant"
+	line "only works on"
+	cont "RATTATAs."
 
-; 	done
+  para "I still have"
+	line "work to do."
+  
+  para "Go deeper in the"
+  line "cave."
+
+  para "You'll find a"
+	line "worthy challenge."
+	done
 
   ;; HUGO
 ; TrainerShinyHunterArthurSilverCave:
@@ -183,6 +192,6 @@ SilverCaveRoom2_MapEvents:
 	object_event 22, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom2UltraBall, EVENT_SILVER_CAVE_ROOM_2_ULTRA_BALL
 	object_event  4, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveRoom2PPUp, EVENT_SILVER_CAVE_ROOM_2_PP_UP
   object_event 16, 16, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerShinyHunterArthurSilverCave, -1
-  object_event 18, 16, SPRITE_STRONGMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerStrongmanMattSilverCave, -1
-  ; object_event 20, 16, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerShinyHunterArthurSilverCave, -1
-  ; object_event 22, 16, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerShinyHunterArthurSilverCave, -1
+  object_event 14, 16, SPRITE_STRONGMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerStrongmanMattSilverCave, -1
+  object_event 12, 16, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerDoctorPhilSilverCave, -1
+  ; object_event 10, 16, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerShinyHunterArthurSilverCave, -1

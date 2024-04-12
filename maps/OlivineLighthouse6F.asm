@@ -2,11 +2,38 @@
 	const OLIVINELIGHTHOUSE6F_JASMINE
 	const OLIVINELIGHTHOUSE6F_MONSTER
 	const OLIVINELIGHTHOUSE6F_POKE_BALL
+	const OLIVINELIGHTHOUSE6F_DOCTOR_PHIL
 
 OlivineLighthouse6F_MapScripts:
 	def_scene_scripts
+	scene_script OlivineLighthouse6FNoop1Scene, SCENE_OLIVINE_LIGHTHOUSE_6F_DOCTOR_PHIL_ENCOUNTER
+	scene_script OlivineLighthouse6FNoop2Scene, SCENE_OLIVINE_LIGHTHOUSE_6F_NOOP
 
 	def_callbacks
+
+OlivineLighthouse6FNoop1Scene:
+	end
+
+OlivineLighthouse6FNoop2Scene:
+	end
+
+OlivineLighthouse6FDoctorPhilScene:
+  applymovement PLAYER, OlivineLighthouse6F_EnterMovement
+	turnobject PLAYER, UP
+	appear OLIVINELIGHTHOUSE6F_DOCTOR_PHIL
+	applymovement OLIVINELIGHTHOUSE6F_DOCTOR_PHIL, OlivineLighthouse6FDoctorPhilApproachMovement
+  opentext
+	writetext OlivineLighthouse6FDoctorPhilText
+	waitbutton
+	closetext
+	applymovement OLIVINELIGHTHOUSE6F_DOCTOR_PHIL, OlivineLighthouse6FDoctorPhilExitMovement
+  playsound SFX_EXIT_BUILDING
+	disappear OLIVINELIGHTHOUSE6F_DOCTOR_PHIL
+  setevent EVENT_DOCTOR_PHIL_3 ; remove national park
+  clearevent EVENT_DOCTOR_PHIL_5 ; appear at secret potion
+	setscene SCENE_OLIVINE_LIGHTHOUSE_6F_NOOP
+	waitsfx
+  end
 
 OlivineLighthouseJasmine:
 	faceplayer
@@ -151,6 +178,24 @@ OlivineLighthouseJasmineLeavesRightMovement:
 	step_sleep 8
 	step_end
 
+OlivineLighthouse6F_EnterMovement:
+	step LEFT
+	step_end
+
+OlivineLighthouse6FDoctorPhilApproachMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+OlivineLighthouse6FDoctorPhilExitMovement:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
 JasmineCianwoodPharmacyText:
 	text "JASMINE: … This"
 	line "#MON always"
@@ -247,6 +292,27 @@ AmphyPaluPaluluText:
 	line "Palulu!"
 	done
 
+OlivineLighthouse6FDoctorPhilText:
+	text "DR PHIL: Move!"
+	line "I need to go to"
+	cont "CIANWOOD."
+
+  text "I heard they have"
+	line "a SECRETPOTION."
+
+  text "If i can study"
+	line "it..."
+
+  text "Yes we could"
+	line "cure both"
+	cont "AMPHAROS..."
+
+  text "No time to"
+	line "waste. CIANWOOD"
+	cont "here i come!"
+
+	done
+
 OlivineLighthouse6F_MapEvents:
 	db 0, 0 ; filler
 
@@ -256,6 +322,7 @@ OlivineLighthouse6F_MapEvents:
 	warp_event 17,  5, OLIVINE_LIGHTHOUSE_5F, 7
 
 	def_coord_events
+	coord_event  9, 15, SCENE_OLIVINE_LIGHTHOUSE_6F_DOCTOR_PHIL_ENCOUNTER, OlivineLighthouse6FDoctorPhilScene
 
 	def_bg_events
 
@@ -263,3 +330,4 @@ OlivineLighthouse6F_MapEvents:
 	object_event  8,  8, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseJasmine, EVENT_OLIVINE_LIGHTHOUSE_JASMINE
 	object_event  9,  8, SPRITE_AMPHAROS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, -1
 	object_event  3,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse6FSuperPotion, EVENT_OLIVINE_LIGHTHOUSE_6F_SUPER_POTION
+	object_event  8, 10, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DOCTOR_PHIL_4

@@ -9,6 +9,9 @@
 	const ROUTE39_PSYCHIC_NORMAN
 	const ROUTE39_FRUIT_TREE
 	const ROUTE39_POKEFAN_F2
+	const ROUTE39_TAUROS
+	const ROUTE39_MATT
+	const ROUTE39_DOCTOR_PHIL
 
 Route39_MapScripts:
 	def_scene_scripts
@@ -195,9 +198,24 @@ Route39StrongmanMattScript:
 	waitsfx
 	jumptextfaceplayer Route39StrongmanMattText
 
+Route39DoctorPhilScript:
+	jumptextfaceplayer Route39DoctorPhilText
+
 Route39StrongmanMattText:
-	text "UUUUUUUUURG !!!"
+	text "MATT: UUUUUUURG!!!"
 	line "Move i'm training."
+
+	done
+
+Route39DoctorPhilText:
+  text "DR PHIL: Shhhhh..."
+
+	para "I'm trying to"
+	line "get some"
+	cont "MOOMOO MILK."
+
+	para "It's for..."
+	line "research."
 
 	done
 
@@ -394,3 +412,4 @@ Route39_MapEvents:
 	object_event  4, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, -1
 	object_event 15, 13, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route39Tauros, -1
 	object_event 15, 14, SPRITE_STRONGMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39StrongmanMattScript, EVENT_STRONGMAN_MATT_2
+	object_event  6, 12, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39DoctorPhilScript, EVENT_DOCTOR_PHIL_3

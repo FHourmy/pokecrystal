@@ -108,12 +108,23 @@ TrainerShinyHunterArthurVictoryRoad:
 	end
 
 TrainerStrongmanMattVictoryRoad:
-	trainer SHINYHUNTER, MATT4, EVENT_BEAT_STRONGMAN_MATT4, StrongmanMatt4SeenText, StrongmanMatt4BeatenText, 0, .Script
+	trainer STRONGMAN, MATT4, EVENT_BEAT_STRONGMAN_MATT4, StrongmanMatt4SeenText, StrongmanMatt4BeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
 	writetext StrongmanMatt4BeatenText
+	waitbutton
+	closetext
+	end
+
+TrainerDoctorPhilVictoryRoad:
+	trainer DOCTOR, PHIL4, EVENT_BEAT_DOCTOR_PHIL7, DoctorPhil4SeenText, DoctorPhil4BeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext DoctorPhil4BeatenText
 	waitbutton
 	closetext
 	end
@@ -328,6 +339,35 @@ StrongmanMatt4BeatenText:
 
 	done
 
+DoctorPhil4SeenText:
+	text "DR PHIL: Ho."
+
+  para "Nice to see"
+	line "you here."
+
+  para "I've made"
+	line "progress on my"
+	cont "research !"
+
+  para "A side effect"
+	line "on RATTATAs made"
+	cont "them super strong!"
+
+  para "Wanna see ?"
+
+	done
+
+DoctorPhil4BeatenText:
+	text "I need money"
+	line "to make my"
+	cont "own lab."
+
+  para "That's why i'm"
+	line "going to the"
+	cont "#MON League."
+
+	done
+
 VictoryRoad_MapEvents:
 	db 0, 0 ; filler
 
@@ -360,6 +400,6 @@ VictoryRoad_MapEvents:
 	object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadHPUp, EVENT_VICTORY_ROAD_HP_UP
   object_event  9, 59, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerShinyHunterArthurVictoryRoad, EVENT_SHINYHUNTER_ARTHUR_4
   object_event 10, 59, SPRITE_STRONGMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerStrongmanMattVictoryRoad, EVENT_STRONGMAN_MATT_4
-  ; object_event  9, 51, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerShinyHunterArthurVictoryRoad, EVENT_SHINYHUNTER_ARTHUR_4
+  object_event  9, 51, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerDoctorPhilVictoryRoad, EVENT_DOCTOR_PHIL_7
   ; object_event 10, 51, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerShinyHunterArthurVictoryRoad, EVENT_SHINYHUNTER_ARTHUR_4
 	

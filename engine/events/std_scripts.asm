@@ -614,6 +614,10 @@ InitializeEventsScript:
 	setevent EVENT_SHINYHUNTER_ARTHUR_2; needs to be set to not appear visible during cutscene
 	setevent EVENT_SHINYHUNTER_ARTHUR_3; needs to be set to not appear visible during cutscene
 	setevent EVENT_STRONGMAN_MATT_3; needs to be set to not appear visible during cutscene
+	setevent EVENT_DOCTOR_PHIL_2; needs to be set to not appear visible during cutscene
+	setevent EVENT_DOCTOR_PHIL_4; needs to be set to not appear visible during cutscene
+	setevent EVENT_DOCTOR_PHIL_5; needs to be set to not appear before lighthouse event
+	setevent EVENT_DOCTOR_PHIL_6; needs to be set to not appear visible during cutscene
 	setevent EVENT_INITIALIZED_EVENTS
 	setevent EVENT_MART_TM_2
 	endcallback

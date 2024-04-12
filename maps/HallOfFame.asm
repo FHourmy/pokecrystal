@@ -32,8 +32,8 @@ HallOfFameEnterScript:
 	special HealMachineAnim
 	setevent EVENT_SHINYHUNTER_ARTHUR_4; remove arthur from victory road
 	setevent EVENT_STRONGMAN_MATT_4; remove matt from victory road
-	;setevent EVENT_DOCTOR_PHIL_4; remove phil from victory road
-	;setevent EVENT_STRONGMAN_MATT_4; remove matt from victory road
+	setevent EVENT_DOCTOR_PHIL_7; remove phil from victory road
+	; setevent EVENT_STRONGMAN_MATT_4; remove matt from victory road
 	setevent EVENT_BEAT_ELITE_FOUR
   clearevent EVENT_MART_TM_2
 	setevent EVENT_TELEPORT_GUY

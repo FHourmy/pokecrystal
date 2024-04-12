@@ -10,6 +10,7 @@
 	const ROUTE30_FRUIT_TREE2
 	const ROUTE30_COOLTRAINER_F
 	const ROUTE30_POKE_BALL
+	const ROUTE30_DOCTOR_PHIL
 
 Route30_MapScripts:
 	def_scene_scripts
@@ -221,6 +222,18 @@ Route30YoungsterScript:
 	closetext
 	end
 
+Route30DoctorPhilScript:
+  writetext Route30DoctorPhilText1
+	waitbutton
+	closetext
+  showemote EMOTE_SHOCK, PLAYER, 15
+  showemote EMOTE_SHOCK, ROUTE30_DOCTOR_PHIL, 15
+	pause 15
+  writetext Route30DoctorPhilText2
+	waitbutton
+	closetext
+  end 
+
 Route30CooltrainerFScript:
 	jumptextfaceplayer Route30CooltrainerFText
 
@@ -404,6 +417,27 @@ YoungsterJoeyText_GiveHPUpAfterBattle:
 	line "tougher too."
 	done
 
+Route30DoctorPhilText1:
+	text "DR PHIL: Shhhhh..."
+
+	para "I'm catching"
+	line "RATTATAs."
+
+	para "I need them to"
+	line "conduct my"
+	cont "experi..."
+
+	done
+
+Route30DoctorPhilText2:
+	text "I mean..."
+
+	para "I need"
+	line "RATTATAs to"
+  cont "earn experience!"
+
+  done
+
 Route30_MapEvents:
 	db 0, 0 ; filler
 
@@ -432,3 +466,4 @@ Route30_MapEvents:
 	object_event 11,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree2, -1
 	object_event  2, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30CooltrainerFScript, -1
 	object_event  8, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30Antidote, EVENT_ROUTE_30_ANTIDOTE
+	object_event  7, 27, SPRITE_DOCTOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30DoctorPhilScript, EVENT_DOCTOR_PHIL_1

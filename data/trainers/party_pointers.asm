@@ -72,6 +72,6 @@ TrainerGroups:
 	dba MysticalmanGroup
 	dba ShinyhunterGroup
 	dba StrongmanGroup
-	; dba DoctorGroup
+	dba DoctorGroup
 	; dba GuideGroup
 	assert_table_length NUM_TRAINER_CLASSES

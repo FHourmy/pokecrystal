@@ -70,6 +70,6 @@ TrainerClassNames::
 	li "MYSTICALMAN"
 	li "SHINYHUNTER"
 	li "STRONGMAN"
-	; li "DOCTOR"
+	li "DOCTOR"
 	; li "GUIDE"
 	assert_list_length NUM_TRAINER_CLASSES

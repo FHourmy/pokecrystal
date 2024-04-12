@@ -168,7 +168,8 @@ AzaleaGroupSprites:
 	db SPRITE_ROCKET
 	db SPRITE_RIVAL
 	db SPRITE_LASS
-	; 7 of max 9 walking sprites
+	db SPRITE_DOCTOR
+	; 8 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_SLOWPOKE
 	db SPRITE_KURT ; non-walking version of SPRITE_KURT
@@ -213,6 +214,7 @@ CianwoodGroupSprites:
 	db SPRITE_SUICUNE
 	db SPRITE_TAUROS
 	db SPRITE_STRONGMAN
+	db SPRITE_DOCTOR
 	db 0 ; end
 
 MahoganyGroupSprites:
@@ -280,7 +282,8 @@ DungeonsGroupSprites:
 	db SPRITE_ROCKER
 	db SPRITE_FISHER
 	db SPRITE_SCIENTIST
-	; 8 of max 9 walking sprites
+	db SPRITE_DOCTOR
+	; 9 of max 9 walking sprites
 	db SPRITE_GAMEBOY_KID
 	db SPRITE_PERSIAN
 	db SPRITE_POKE_BALL

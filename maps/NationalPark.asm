@@ -13,6 +13,7 @@
 	const NATIONALPARK_POKE_BALL1
 	const NATIONALPARK_GAMEBOY_KID
 	const NATIONALPARK_POKE_BALL2
+	const NATIONALPARK_DOCTOR_PHIL
 
 NationalPark_MapScripts:
 	def_scene_scripts
@@ -305,6 +306,16 @@ NationalParkTMDig:
 NationalParkHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
 
+NationalParkDoctorPhilScript:
+	trainer DOCTOR, PHIL2, EVENT_BEAT_DOCTOR_PHIL3, NationalParkDoctorPhilSeenText, NationalParkDoctorPhilBeatenText, 0, .Script
+.Script:
+	endifjustbattled
+	opentext
+	writetext NationalParkDoctorPhilBeatenText
+	waitbutton
+	closetext
+	end
+
 NationalParkLassText:
 	text "Look! Check out my"
 	line "bag!"
@@ -511,6 +522,38 @@ NationalParkTrainerTipsText:
 	cont "pressing START."
 	done
 
+NationalParkDoctorPhilSeenText:
+	text "DR PHIL: Shhhhh..."
+
+	para "I'm catching some"
+	line "Bug #MON."
+
+	para "I've tried"
+	line "everything"
+	cont "on RATTATAs."
+
+	para "Maybe on bugs i"
+	line "could get some"
+	cont "good components."
+
+	para "With this i could"
+	line "synthesize some"
+	cont "great medicine."
+
+	done
+
+NationalParkDoctorPhilBeatenText:
+	text "Hmmm ? Yes, yes"
+  line "of course nothing"
+	cont "unethical."
+
+	text "It's to earn"
+  line "experience not do"
+	cont "experiments..."
+
+	done
+
+
 NationalPark_MapEvents:
 	db 0, 0 ; filler
 
@@ -543,3 +586,4 @@ NationalPark_MapEvents:
 	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
 	object_event 26,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkGameboyKidScript, -1
 	object_event  1, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkTMDig, EVENT_NATIONAL_PARK_TM_DIG
+	object_event 29, 16, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, NationalParkDoctorPhilScript, EVENT_DOCTOR_PHIL_3

@@ -70,6 +70,6 @@ BTTrainerClassSprites:
   db SPRITE_SUPER_NERD ; mysticalman
   db SPRITE_SHINYHUNTER
   db SPRITE_STRONGMAN
-  ; db SPRITE_DOCTOR
+  db SPRITE_DOCTOR
   ; db SPRITE_GUIDE
   assert_table_length NUM_TRAINER_CLASSES
