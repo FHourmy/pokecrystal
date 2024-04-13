@@ -68,6 +68,32 @@ VioletCityGrampsScript:
 VioletCityYoungsterScript:
 	jumptextfaceplayer VioletCityYoungsterText
 
+VioletGuideHugoScript:
+  faceplayer
+	opentext
+	checkevent EVENT_BEAT_GUIDE_HUGO_VIOLET
+	iftrue .FightDone
+	writetext VioletGuideHugoBeforeFightText
+	waitbutton
+  yesorno
+	iffalse .End
+	closetext
+	winlosstext VioletGuideHugoBeatenText, 0
+	loadtrainer GUIDE, HUGO1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GUIDE_HUGO_VIOLET
+.FightDone
+	opentext
+  writetext VioletGuideHugoAfterFightText
+	waitbutton
+	closetext
+  end
+
+.End
+	closetext
+  end
+
 VioletCitySign:
 	jumptext VioletCitySignText
 
@@ -276,6 +302,57 @@ EarlsPokemonAcademySignText:
 	line "ACADEMY"
 	done
 
+VioletGuideHugoBeforeFightText:
+  text "HUGO: Hey rookie !"
+	line "I'm HUGO. Welcome"
+	cont "to Violet City."
+
+	para "I'm a trainer for"
+	line "The Johto Trainer"
+	cont "Association."
+
+	para "We are looking to"
+	line "improve THE Johto"
+	cont "experience."
+
+	para "If you beat me in"
+	line "a fight i'll give"
+	cont "you some top info!"
+
+	para "Want to battle ?"
+
+	done
+
+VioletGuideHugoBeatenText:
+  text "Nice one rookie !"
+	done
+
+VioletGuideHugoAfterFightText:
+	text "I heard some weird"
+	line "doctor is on"
+	cont "Route 30."
+
+  para "Also, a trainer"
+  line "speaks about"
+  cont "sparkly #MON."
+
+	para "A strong guy"
+	line "is training in"
+	cont "Union Cave,"
+
+	para "It's south of"
+	line "Violet City."
+
+	para "A fire type"
+	line "#MON can be"
+	cont "usefull,"
+
+	para "you can find"
+	line "some west of"
+	cont "Violet City."
+
+	done
+
 VioletCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -310,3 +387,4 @@ VioletCity_MapEvents:
 	object_event 14, 29, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
 	object_event  4,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityPPUp, EVENT_VIOLET_CITY_PP_UP
 	object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY
+	object_event 34, 25, SPRITE_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletGuideHugoScript, -1

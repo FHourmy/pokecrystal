@@ -6,6 +6,7 @@
 	const ECRUTEAKCITY_FISHER
 	const ECRUTEAKCITY_YOUNGSTER
 	const ECRUTEAKCITY_GRAMPS3
+	const ECRUTEAKCITY_GUIDE_HUGO
 
 EcruteakCity_MapScripts:
 	def_scene_scripts
@@ -87,6 +88,32 @@ EcruteakCityMartSign:
 
 EcruteakCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_ECRUTEAK_CITY_HIDDEN_HYPER_POTION
+
+EcruteakGuideHugoScript:
+  faceplayer
+	opentext
+	checkevent EVENT_BEAT_GUIDE_HUGO_ECRUTEAK
+	iftrue .FightDone
+	writetext EcruteakGuideHugoBeforeFightText
+	waitbutton
+  yesorno
+	iffalse .End
+	closetext
+	winlosstext EcruteakGuideHugoBeatenText, 0
+	loadtrainer GUIDE, HUGO4
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GUIDE_HUGO_ECRUTEAK
+.FightDone
+	opentext
+  writetext EcruteakGuideHugoAfterFightText
+	waitbutton
+	closetext
+  end
+
+.End
+	closetext
+  end
 
 UnusedMissingDaughterText: ; unreferenced
 	text "Oh, no. Oh, no…"
@@ -256,6 +283,52 @@ BurnedTowerSignText:
 	line "as it is unsafe."
 	done
 
+EcruteakGuideHugoBeforeFightText:
+  text "HUGO: Hey fighter !"
+	line "Welcome to"
+	cont "Ecruteak City."
+
+	para "I heard it was"
+	line "a brilliant fight"
+	cont "with Whitney !"
+
+	para "If you beat me in"
+	line "a fight i'll give"
+	cont "you some top info!"
+
+	para "Want to battle ?"
+
+	done
+
+EcruteakGuideHugoBeatenText:
+  text "Nice one fighter !"
+	done
+
+EcruteakGuideHugoAfterFightText:
+	text "Remember, the"
+	line "buffed dude in"
+  cont "Union Cave ?"
+
+  para "He is doing some"
+  line "weird training in"
+  cont "the burned tower."
+
+  para "You should check"
+	line "it out!"
+
+	para "Ba carefull of"
+	line "ghost in the gym."
+
+	para "Normal type"
+	line "#MON could"
+	cont "be good"
+
+	para "The are some"
+	line "good ones west of"
+	cont "Ecruteak City."
+
+	done
+
 EcruteakCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -296,3 +369,4 @@ EcruteakCity_MapEvents:
 	object_event  9, 22, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
 	object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1
 	object_event  3,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
+	object_event 21, 27, SPRITE_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakGuideHugoScript, -1

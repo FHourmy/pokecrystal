@@ -713,7 +713,7 @@ SECTION "Pics 19", ROMX
 ShinyhunterPic:      INCBIN "gfx/trainers/shinyhunter.2bpp.lz"
 StrongmanPic:        INCBIN "gfx/trainers/shinyhunter.2bpp.lz"
 DoctorPic:           INCBIN "gfx/trainers/shinyhunter.2bpp.lz"
-; GuidePic:            INCBIN "gfx/trainers/shinyhunter.2bpp.lz"
+GuidePic:            INCBIN "gfx/trainers/shinyhunter.2bpp.lz"
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
 
 

@@ -378,12 +378,6 @@ INCLUDE "maps/Route31VioletGate.asm"
 
 SECTION "Map Scripts 19", ROMX
 
-INCLUDE "maps/AzaleaTown.asm"
-INCLUDE "maps/GoldenrodCity.asm"
-INCLUDE "maps/SaffronCity.asm"
-INCLUDE "maps/MahoganyRedGyaradosSpeechHouse.asm"
-INCLUDE "maps/MahoganyGym.asm"
-INCLUDE "maps/MahoganyPokecenter1F.asm"
 INCLUDE "maps/Route42EcruteakGate.asm"
 INCLUDE "maps/LakeOfRageHiddenPowerHouse.asm"
 INCLUDE "maps/LakeOfRageMagikarpHouse.asm"
@@ -484,5 +478,14 @@ SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
+
+SECTION "Map Scripts 26", ROMX
+
+INCLUDE "maps/AzaleaTown.asm"
+INCLUDE "maps/GoldenrodCity.asm"
+INCLUDE "maps/SaffronCity.asm"
+INCLUDE "maps/MahoganyRedGyaradosSpeechHouse.asm"
+INCLUDE "maps/MahoganyGym.asm"
+INCLUDE "maps/MahoganyPokecenter1F.asm"
 
 ENDSECTION

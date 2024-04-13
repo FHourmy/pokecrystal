@@ -29,7 +29,7 @@ MaleTrainers:
 	db SHINYHUNTER
 	db STRONGMAN
 	db DOCTOR
-	; db GUIDE
+	db GUIDE
 .End
 
 FemaleTrainers:

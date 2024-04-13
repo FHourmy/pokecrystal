@@ -14,6 +14,7 @@
 	const GOLDENRODCITY_ROCKET5
 	const GOLDENRODCITY_ROCKET6
 	const GOLDENRODCITY_MOVETUTOR
+	const GOLDENRODCITY_GUIDE_HUGO
 
 GoldenrodCity_MapScripts:
 	def_scene_scripts
@@ -141,6 +142,32 @@ MoveTutorScript:
 	waitbutton
 	closetext
 	end
+
+GoldenrodGuideHugoScript:
+  faceplayer
+	opentext
+	checkevent EVENT_BEAT_GUIDE_HUGO_GOLDENROD
+	iftrue .FightDone
+	writetext GoldenrodGuideHugoBeforeFightText
+	waitbutton
+  yesorno
+	iffalse .End
+	closetext
+	winlosstext GoldenrodGuideHugoBeatenText, 0
+	loadtrainer GUIDE, HUGO3
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GUIDE_HUGO_GOLDENROD
+.FightDone
+	opentext
+  writetext GoldenrodGuideHugoAfterFightText
+	waitbutton
+	closetext
+  end
+
+.End
+	closetext
+  end
 
 GoldenrodCityPokefanMScript:
 	jumptextfaceplayer GoldenrodCityPokefanMText
@@ -531,6 +558,59 @@ GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText:
 	line "enough coins here…"
 	done
 
+GoldenrodGuideHugoBeforeFightText:
+  text "HUGO: Hey trainer !"
+	line "Welcome to"
+	cont "Goldenrod City."
+
+	para "The JTA is"
+	line "taking interest in"
+	cont "you. keep going"
+
+	para "If you beat me in"
+	line "a fight i'll give"
+	cont "you some top info!"
+
+	para "Want to battle ?"
+
+	done
+
+GoldenrodGuideHugoBeatenText:
+  text "Nice one trainer !"
+	done
+
+GoldenrodGuideHugoAfterFightText:
+	text "The weird doctor,"
+	line "Again !"
+
+  para "He is doing"
+  line "things in the"
+  cont "park..."
+
+	para "Also the"
+	line "sparkly-shiny"
+	cont "kid..."
+
+	para "He was running up"
+	line "and down from the"
+	cont "DAYCARE..."
+
+	para "A real mad"
+	line "man!"
+
+	para "He was talking "
+	line "about EGGs left"
+	cont "at the DAYCARE."
+
+	para "Take some time"
+	line "to buy TMs at"
+	cont "the store."
+
+	para "Elemental punches"
+	line "are great moves."
+
+	done
+
 GoldenrodCityMoveTutorMoveText:
 	text_start
 	done
@@ -587,3 +667,4 @@ GoldenrodCity_MapEvents:
 	object_event 29,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket5Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 31, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket6Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 12, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorScript, EVENT_GOLDENROD_CITY_MOVE_TUTOR
+	object_event 14, 28, SPRITE_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodGuideHugoScript, -1

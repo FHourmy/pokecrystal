@@ -232,7 +232,8 @@ StrongmanMatt1BeatenText:
 	done
 
 UnionCave1FTyrogueText:
-  text "PUNCH PUNCH"
+  text "TYROGUE: PUNCH"
+	line "PUNCH"
 	done
 
 UnionCave1FUnusedSignText:

@@ -709,23 +709,27 @@ DEF KRIS EQU __trainer_class__
 	const ARTHUR3
 	const ARTHUR4
 	const ARTHUR5
-  trainerclass STRONGMAN ; 46
+  trainerclass STRONGMAN ; 45
   const MATT1
   const MATT2
   const MATT3
   const MATT4
   const MATT5
-  trainerclass DOCTOR ; 45
+  trainerclass DOCTOR ; 46
   const PHIL1
   const PHIL2
   const PHIL3
   const PHIL4
   const PHIL5
-  ; trainerclass GUIDE ; 47
-  ; const HUGO1
-  ; const HUGO2
-  ; const HUGO3
-  ; const HUGO4
-  ; const HUGO5
+  trainerclass GUIDE ; 47
+  const HUGO1
+  const HUGO2
+  const HUGO3
+  const HUGO4
+  const HUGO5
+  const HUGO6
+  const HUGO7
+  const HUGO8
+  const HUGO9
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

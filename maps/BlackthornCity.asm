@@ -9,6 +9,7 @@
 	const BLACKTHORNCITY_SANTOS
 	const BLACKTHORNCITY_COOLTRAINER_F2
 	const BLACKTHORNCITY_CLAIR
+	const BLACKTHORNCITY_GUIDE_HUGO
 
 BlackthornCity_MapScripts:
 	def_scene_scripts
@@ -182,6 +183,34 @@ BlackthornCityPokecenterSign:
 
 BlackthornCityMartSign:
 	jumpstd MartSignScript
+
+BlackthornGuideHugoScript:
+  faceplayer
+	opentext
+	checkevent EVENT_BEAT_GUIDE_HUGO_BLACKTHORN
+	iftrue .FightDone
+	writetext BlackthornGuideHugoBeforeFightText
+	waitbutton
+  yesorno
+	iffalse .End
+	closetext
+	winlosstext BlackthornGuideHugoBeatenText, 0
+	loadtrainer GUIDE, HUGO8
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GUIDE_HUGO_BLACKTHORN
+.FightDone
+	opentext
+  writetext BlackthornGuideHugoAfterFightText
+	waitbutton
+	closetext
+  end
+
+.End
+	closetext
+  end
+
+
 
 Text_ClairNotEnoughBadges:
 	text "I am CLAIR."
@@ -375,6 +404,43 @@ BlackthornCityTrainerTipsText:
 	cont "problem."
 	done
 
+
+BlackthornGuideHugoBeforeFightText:
+  text "HUGO: Hey Future"
+	line "Champ! Welcome to"
+	cont "Blackthorn City."
+
+	para "This is where you"
+	line "will get your 8th"
+	cont "badge."
+
+	para "If you beat me in"
+	line "a fight i'll give"
+	cont "you some top info!"
+
+	para "Want to battle ?"
+
+	done
+
+BlackthornGuideHugoBeatenText:
+  text "Nice one Future"
+  line "Champ !"
+	done
+
+BlackthornGuideHugoAfterFightText:
+	text "I don't really"
+	line "have much info."
+
+  para "Get your 8th"
+  line "badge then go to"
+  cont "Victory Road."
+
+  para "Top trainers are"
+	line "rassembling there."
+
+	done
+
+
 BlackthornCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -410,3 +476,4 @@ BlackthornCity_MapEvents:
 	object_event 22, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SantosScript, EVENT_BLACKTHORN_CITY_SANTOS_OF_SATURDAY
 	object_event 35, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BlackthornCooltrainerF2Script, -1
 	object_event 18, 12, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornClairScript, EVENT_BLACKTHORN_CITY_CLAIR_BLOCKS_GYM
+	object_event 20, 30, SPRITE_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGuideHugoScript, -1

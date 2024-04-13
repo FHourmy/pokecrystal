@@ -333,7 +333,7 @@ LakeOfRageArthurText:
 	line "a golden"
   cont "magikarp."
 
-  text "I'm fishing"
+  para "I'm fishing"
 	line "until i catch"
   cont "it !"
 	done

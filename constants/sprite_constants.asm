@@ -105,9 +105,9 @@
 	const SPRITE_CHRIS_RUN ; 66
 	const SPRITE_KRIS_RUN ; 67
 	const SPRITE_SHINYHUNTER ; 66
-	const SPRITE_STRONGMAN ; 69
-	const SPRITE_DOCTOR ; 68
-	; const SPRITE_GUIDE ; 70
+	const SPRITE_STRONGMAN ; 68
+	const SPRITE_DOCTOR ; 69
+	const SPRITE_GUIDE ; 70
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

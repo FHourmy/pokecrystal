@@ -12,6 +12,7 @@
 	const AZALEATOWN_AZALEA_ROCKET3
 	const AZALEATOWN_KURT_OUTSIDE
 	const AZALEATOWN_DOCTOR_PHIL
+	const AZALEATOWN_GUIDE_HUGO
 
 AzaleaTown_MapScripts:
 	def_scene_scripts
@@ -38,6 +39,32 @@ AzaleaTownNoop3Scene:
 AzaleaTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_AZALEA
 	endcallback
+
+AzaleaGuideHugoScript:
+  faceplayer
+	opentext
+	checkevent EVENT_BEAT_GUIDE_HUGO_AZALEA
+	iftrue .FightDone
+	writetext AzaleaGuideHugoBeforeFightText
+	waitbutton
+  yesorno
+	iffalse .End
+	closetext
+	winlosstext AzaleaGuideHugoBeatenText, 0
+	loadtrainer GUIDE, HUGO2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GUIDE_HUGO_AZALEA
+.FightDone
+	opentext
+  writetext AzaleaGuideHugoAfterFightText
+	waitbutton
+	closetext
+  end
+
+.End
+	closetext
+  end
 
 AzaleaTownDoctorPhilScene:
 	turnobject PLAYER, DOWN
@@ -562,6 +589,46 @@ AzaleaTownDoctorPhilAfterText:
 
 	done
 
+AzaleaGuideHugoBeforeFightText:
+  text "HUGO: Hey buddy !"
+	line "Welcome to"
+	cont "Azaela Town."
+
+	para "You are"
+	line "progressing well,"
+	cont "good job."
+
+	para "If you beat me in"
+	line "a fight i'll give"
+	cont "you some top info!"
+
+	para "Want to battle ?"
+
+	done
+
+AzaleaGuideHugoBeatenText:
+  text "Nice one buddy !"
+	done
+
+AzaleaGuideHugoAfterFightText:
+	text "I heard the weird"
+	line "doctor is around"
+	cont "Azalea."
+
+	para "Also, some trainer"
+	line "has been stuck"
+	cont "in the well."
+
+	para "A fighting type"
+	line "#MON can be"
+	cont "usefull next,"
+
+	para "you can find"
+	line "some east of"
+	cont "Azalea Town."
+
+	done
+
 AzaleaTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -605,4 +672,5 @@ AzaleaTown_MapEvents:
 	object_event 11, 10, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_AZALEA_TOWN
 	object_event 10, 16, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownRocket2Script, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  6,  5, SPRITE_KURT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownKurtScript, EVENT_AZALEA_TOWN_KURT
-	object_event 31,  4, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DOCTOR_PHIL_2
+	object_event 31, 10, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DOCTOR_PHIL_2
+	object_event 17,  9, SPRITE_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaGuideHugoScript, -1

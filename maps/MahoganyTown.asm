@@ -5,6 +5,7 @@ DEF MAHOGANYTOWN_RAGECANDYBAR_PRICE EQU 300
 	const MAHOGANYTOWN_FISHER
 	const MAHOGANYTOWN_LASS
 	const MAHOGANYTOWN_ARTHUR
+	const MAHOGANYTOWN_GUIDE_HUGO
 
 MahoganyTown_MapScripts:
 	def_scene_scripts
@@ -83,6 +84,32 @@ MahoganyGymSign:
 
 MahoganyTownPokecenterSign:
 	jumpstd PokecenterSignScript
+
+MahoganyGuideHugoScript:
+  faceplayer
+	opentext
+	checkevent EVENT_BEAT_GUIDE_HUGO_MAHOGANY
+	iftrue .FightDone
+	writetext MahoganyGuideHugoBeforeFightText
+	waitbutton
+  yesorno
+	iffalse .End
+	closetext
+	winlosstext MahoganyGuideHugoBeatenText, 0
+	loadtrainer GUIDE, HUGO7
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GUIDE_HUGO_MAHOGANY
+.FightDone
+	opentext
+  writetext MahoganyGuideHugoAfterFightText
+	waitbutton
+	closetext
+  end
+
+.End
+	closetext
+  end
 
 
 MahoganyTownGrampsText:
@@ -179,6 +206,57 @@ MahoganyArthurAfterText:
 
 	done
 
+MahoganyGuideHugoBeforeFightText:
+  text "HUGO: Hey man !"
+	line "Welcome to"
+	cont "Mahogany Town."
+
+	para "There is some"
+	line "strange vibe"
+	cont "around..."
+
+	para "If you beat me in"
+	line "a fight i'll give"
+	cont "you some top info!"
+
+	para "Want to battle ?"
+
+	done
+
+MahoganyGuideHugoBeatenText:
+  text "Nice one man !"
+	done
+
+MahoganyGuideHugoAfterFightText:
+	text "The shiny guy"
+	line "is at the lake !"
+
+  para "He is screaming"
+  line "at everyone about"
+  cont "a golden MAGIKARP."
+
+  para "The strong-crazy"
+	line "guy came through"
+	cont "the town too."
+
+  para "He was talking"
+	line "about ice skating"
+	cont "..."
+
+  para "!"
+
+  para "Might have been"
+	line "ice training!"
+
+  para "Be careful of the"
+	line "town mart."
+
+  para "It is looking a"
+	line "bit shady if you"
+	cont "want my opinion."
+
+	done
+
 MahoganyArthurBattleApproachMovement:
 	step LEFT
 	step LEFT
@@ -217,3 +295,4 @@ MahoganyTown_MapEvents:
 	object_event  6, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisherScript, EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_GYM
 	object_event 12,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLassScript, EVENT_MAHOGANY_MART_OWNERS
   object_event 11, 14, SPRITE_SHINYHUNTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SHINYHUNTER_ARTHUR_3
+	object_event 17, 14, SPRITE_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyGuideHugoScript, -1

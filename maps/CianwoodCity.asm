@@ -11,6 +11,7 @@
 	const CIANWOODCITY_POKEFAN_F
 	const CIANWOODCITY_EUSINE
 	const CIANWOODCITY_SUICUNE
+	const CIANWOODCITY_GUIDE_HUGO
 
 CianwoodCity_MapScripts:
 	def_scene_scripts
@@ -178,6 +179,32 @@ CianwoodCityEusineDepartMovement:
 	step DOWN
 	step DOWN
 	step_end
+
+CianwoodGuideHugoScript:
+  faceplayer
+	opentext
+	checkevent EVENT_BEAT_GUIDE_HUGO_CIANWOOD
+	iftrue .FightDone
+	writetext CianwoodGuideHugoBeforeFightText
+	waitbutton
+  yesorno
+	iffalse .End
+	closetext
+	winlosstext CianwoodGuideHugoBeatenText, 0
+	loadtrainer GUIDE, HUGO6
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GUIDE_HUGO_CIANWOOD
+.FightDone
+	opentext
+  writetext CianwoodGuideHugoAfterFightText
+	waitbutton
+	closetext
+  end
+
+.End
+	closetext
+  end
 
 ChucksWifeEasierToFlyText:
 	text "You crossed the"
@@ -377,6 +404,46 @@ CianwoodPokeSeerSignText:
 	line "AHEAD"
 	done
 
+CianwoodGuideHugoBeforeFightText:
+  text "HUGO: Hey sailor !"
+	line "Welcome to"
+	cont "Cianwood City."
+
+	para "What a swim"
+	line "to come here,"
+	cont "right ?"
+
+	para "You'd think"
+	line "there'd be boat"
+	cont "or something..."
+
+	para "If you beat me in"
+	line "a fight i'll give"
+	cont "you some top info!"
+
+	para "Want to battle ?"
+
+	done
+
+CianwoodGuideHugoBeatenText:
+  text "Nice one sailor !"
+	done
+
+CianwoodGuideHugoAfterFightText:
+	text "People are saying"
+	line "a doctor is doing"
+  cont "back and forth"
+
+  para "at the pharmacy."
+  line "Something about a"
+  cont "cure."
+
+  para "There is also"
+	line "this guy north of"
+	cont "the island."
+
+	done
+
 CianwoodCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -415,3 +482,4 @@ CianwoodCity_MapEvents:
 	object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
 	object_event 11, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE
 	object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
+	object_event 21, 43, SPRITE_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGuideHugoScript, -1

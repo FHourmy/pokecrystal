@@ -126,15 +126,13 @@ CherrygroveGroupSprites:
 	db SPRITE_FISHER
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_YOUNGSTER
-	db SPRITE_MONSTER
 	db SPRITE_GRAMPS
 	db SPRITE_BUG_CATCHER
 	db SPRITE_COOLTRAINER_F
+	db SPRITE_DOCTOR
 	; max 9 of 9 walking sprites
+	db SPRITE_MONSTER
 	db SPRITE_SHINYHUNTER
-	; db SPRITE_DOCTOR
-	; db SPRITE_STRONGMAN
-	; db SPRITE_GUIDE
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
@@ -157,6 +155,7 @@ EcruteakGroupSprites:
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db SPRITE_SUICUNE
+	db SPRITE_GUIDE
 	db 0 ; end
 
 AzaleaGroupSprites:
@@ -170,6 +169,7 @@ AzaleaGroupSprites:
 	db SPRITE_LASS
 	db SPRITE_DOCTOR
 	; 8 of max 9 walking sprites
+	db SPRITE_GUIDE
 	db SPRITE_FRUIT_TREE
 	db SPRITE_SLOWPOKE
 	db SPRITE_KURT ; non-walking version of SPRITE_KURT
@@ -186,6 +186,7 @@ GoldenrodGroupSprites:
 	db SPRITE_LASS
 	db SPRITE_SHINYHUNTER
 	; 8 of max 9 walking sprites
+  db SPRITE_GUIDE
   db SPRITE_EGG
 	db SPRITE_DAY_CARE_MON_1
 	db SPRITE_DAY_CARE_MON_2
@@ -215,6 +216,7 @@ CianwoodGroupSprites:
 	db SPRITE_TAUROS
 	db SPRITE_STRONGMAN
 	db SPRITE_DOCTOR
+  db SPRITE_GUIDE
 	db 0 ; end
 
 MahoganyGroupSprites:
@@ -232,6 +234,7 @@ MahoganyGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
 	db SPRITE_SUICUNE
+  db SPRITE_GUIDE
 	db 0 ; end
 
 LakeOfRageGroupSprites:
@@ -265,6 +268,7 @@ BlackthornGroupSprites:
 	; 9 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
+  db SPRITE_GUIDE
 	db 0 ; end
 
 SilverGroupSprites:

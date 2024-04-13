@@ -3,6 +3,7 @@
 	const OLIVINECITY_STANDING_YOUNGSTER
 	const OLIVINECITY_SAILOR2
 	const OLIVINECITY_OLIVINE_RIVAL
+	const OLIVINECITY_GUIDE_HUGO
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -162,6 +163,32 @@ OlivineCityPlayerStepsAsideBottomMovement:
 	turn_head DOWN
 	step_end
 
+OlivineGuideHugoScript:
+  faceplayer
+	opentext
+	checkevent EVENT_BEAT_GUIDE_HUGO_OLIVINE
+	iftrue .FightDone
+	writetext OlivineGuideHugoBeforeFightText
+	waitbutton
+  yesorno
+	iffalse .End
+	closetext
+	winlosstext OlivineGuideHugoBeatenText, 0
+	loadtrainer GUIDE, HUGO5
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GUIDE_HUGO_OLIVINE
+.FightDone
+	opentext
+  writetext OlivineGuideHugoAfterFightText
+	waitbutton
+	closetext
+  end
+
+.End
+	closetext
+  end
+
 OlivineCityRivalText:
 	text "…"
 
@@ -283,6 +310,52 @@ OlivineCityBattleTowerSignText_NotYetOpen: ; unreferenced
 	text "BATTLE TOWER AHEAD"
 	done
 
+OlivineGuideHugoBeforeFightText:
+  text "HUGO: Hey mate !"
+	line "Welcome to"
+	cont "Olivine City."
+
+	para "I love the"
+	line "fresh air of this"
+	cont "place !"
+
+	para "If you beat me in"
+	line "a fight i'll give"
+	cont "you some top info!"
+
+	para "Want to battle ?"
+
+	done
+
+OlivineGuideHugoBeatenText:
+  text "Nice one mate !"
+	done
+
+OlivineGuideHugoAfterFightText:
+	text "The buffed dude"
+	line "is back with some"
+  cont "training."
+
+  para "People are saying"
+  line "he is fighting"
+  cont "a tauros."
+
+  para "Also i heard some"
+	line "MOOMOO MILK has"
+	cont "been stolen."
+
+	para "The farm is north."
+	line "be carefull"
+	cont "there."
+
+	para "You should check"
+	line "the lighthouse,"
+
+	para "it's a good place"
+	line "to train a bit."
+
+	done
+
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -317,3 +390,4 @@ OlivineCity_MapEvents:
 	object_event 20, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
 	object_event 17, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 10, 11, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
+	object_event 12, 22, SPRITE_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineGuideHugoScript, -1
