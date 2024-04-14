@@ -145,9 +145,9 @@ MoveTutorScript:
 
 GoldenrodGuideHugoScript:
   faceplayer
-	opentext
 	checkevent EVENT_BEAT_GUIDE_HUGO_GOLDENROD
 	iftrue .FightDone
+	opentext
 	writetext GoldenrodGuideHugoBeforeFightText
 	waitbutton
   yesorno

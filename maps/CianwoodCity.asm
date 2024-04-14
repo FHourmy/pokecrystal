@@ -182,9 +182,9 @@ CianwoodCityEusineDepartMovement:
 
 CianwoodGuideHugoScript:
   faceplayer
-	opentext
 	checkevent EVENT_BEAT_GUIDE_HUGO_CIANWOOD
 	iftrue .FightDone
+	opentext
 	writetext CianwoodGuideHugoBeforeFightText
 	waitbutton
   yesorno
@@ -414,7 +414,7 @@ CianwoodGuideHugoBeforeFightText:
 	cont "right ?"
 
 	para "You'd think"
-	line "there'd be boat"
+	line "there' d be a boat"
 	cont "or something..."
 
 	para "If you beat me in"

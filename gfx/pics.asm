@@ -711,9 +711,9 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 SECTION "Pics 19", ROMX
 
 ShinyhunterPic:      INCBIN "gfx/trainers/shinyhunter.2bpp.lz"
-StrongmanPic:        INCBIN "gfx/trainers/shinyhunter.2bpp.lz"
-DoctorPic:           INCBIN "gfx/trainers/shinyhunter.2bpp.lz"
-GuidePic:            INCBIN "gfx/trainers/shinyhunter.2bpp.lz"
+StrongmanPic:        INCBIN "gfx/trainers/strongman.2bpp.lz"
+DoctorPic:           INCBIN "gfx/trainers/doctor.2bpp.lz"
+GuidePic:            INCBIN "gfx/trainers/guide.2bpp.lz"
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
 
 

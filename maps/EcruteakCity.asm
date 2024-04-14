@@ -91,9 +91,9 @@ EcruteakCityHiddenHyperPotion:
 
 EcruteakGuideHugoScript:
   faceplayer
-	opentext
 	checkevent EVENT_BEAT_GUIDE_HUGO_ECRUTEAK
 	iftrue .FightDone
+	opentext
 	writetext EcruteakGuideHugoBeforeFightText
 	waitbutton
   yesorno

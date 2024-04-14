@@ -26,9 +26,9 @@ MtSilverSignText:
 
 SilverCaveGuideHugoScript:
   faceplayer
-	opentext
 	checkevent EVENT_BEAT_GUIDE_HUGO_SILVERCAVE
 	iftrue .FightDone
+	opentext
 	writetext SilverCaveGuideHugoBeforeFightText
 	waitbutton
   yesorno

@@ -70,9 +70,9 @@ VioletCityYoungsterScript:
 
 VioletGuideHugoScript:
   faceplayer
-	opentext
 	checkevent EVENT_BEAT_GUIDE_HUGO_VIOLET
 	iftrue .FightDone
+	opentext
 	writetext VioletGuideHugoBeforeFightText
 	waitbutton
   yesorno

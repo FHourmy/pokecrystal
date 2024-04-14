@@ -29,6 +29,8 @@ MahoganyArthurBattleScene:
 	turnobject PLAYER, RIGHT
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
+  special FadeOutMusic
+  playmusic MUSIC_HIKER_ENCOUNTER
 	appear MAHOGANYTOWN_ARTHUR
 	applymovement MAHOGANYTOWN_ARTHUR, MahoganyArthurBattleApproachMovement
 
@@ -38,9 +40,12 @@ MahoganyArthurBattleScript:
 	waitbutton
 	closetext
 	winlosstext MahoganyArthurWinText, 0
+	setevent EVENT_SHINYHUNTER_ARTHUR_3
 	loadtrainer SHINYHUNTER, ARTHUR3
 	startbattle
+	dontrestartmapmusic
 	reloadmapafterbattle
+  playmusic MUSIC_HIKER_ENCOUNTER
 	opentext
 	writetext MahoganyArthurAfterText
 	waitbutton
@@ -49,6 +54,8 @@ MahoganyArthurBattleScript:
 	disappear MAHOGANYTOWN_ARTHUR
 	setscene SCENE_MAHOGANYTOWN_NOOP
 	waitsfx
+	pause 15
+	playmapmusic
 	end
 
 MahoganyTownGrampsScript:
@@ -87,9 +94,9 @@ MahoganyTownPokecenterSign:
 
 MahoganyGuideHugoScript:
   faceplayer
-	opentext
 	checkevent EVENT_BEAT_GUIDE_HUGO_MAHOGANY
 	iftrue .FightDone
+	opentext
 	writetext MahoganyGuideHugoBeforeFightText
 	waitbutton
   yesorno

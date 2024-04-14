@@ -70,6 +70,8 @@ DaycareArthurBattleScene1:
 DaycareArthurBattleScene2:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
+  special FadeOutMusic
+  playmusic MUSIC_HIKER_ENCOUNTER
 	appear ROUTE34_ARTHUR
 	applymovement ROUTE34_ARTHUR, DaycareArthurBattleApproachMovement2
 
@@ -79,10 +81,12 @@ DaycareArthurBattleScript:
 	waitbutton
 	closetext
 	winlosstext DaycareArthurWinText, 0
-	setlasttalked ROUTE34_ARTHUR
+	setevent EVENT_SHINYHUNTER_ARTHUR_2
 	loadtrainer SHINYHUNTER, ARTHUR2
 	startbattle
+	dontrestartmapmusic
 	reloadmapafterbattle
+  playmusic MUSIC_HIKER_ENCOUNTER
 	opentext
 	writetext DaycareArthurAfterText
 	waitbutton
@@ -92,6 +96,8 @@ DaycareArthurBattleScript:
 	disappear ROUTE34_ARTHUR
 	setscene SCENE_ROUTE_34_NOOP
 	waitsfx
+	pause 15
+	playmapmusic
 	end
 
 DayCareManScript_Outside:

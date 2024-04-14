@@ -6,64 +6,60 @@
 
 IcePath1F_MapScripts:
 	def_scene_scripts
-	scene_script IcePathB1fNoop1Scene, SCENE_ICE_PATH_B1F_MATT_BATTLE
-	scene_script IcePathB1fNoop2Scene, SCENE_ICE_PATH_B1F_NOOP
 
 	def_callbacks
 
-IcePathB1fNoop1Scene:
-	end
 
-IcePathB1fNoop2Scene:
-	end
-
-IcePathB1fMattBattleScene:
-	turnobject PLAYER, RIGHT
-	showemote EMOTE_SHOCK, PLAYER, 15
-	pause 15
-	appear ICEPATH1F_MATT
-	applymovement ICEPATH1F_MATT, IcePathB1fMattBattleApproachMovement
-
-IcePathB1fMattBattleScript:
-	opentext
-	writetext IcePathB1fMattBeforeText
+IcePathMatt:
+	checkevent EVENT_STRONGMAN_MATT_3
+	iffalse .IcePathMattBattleScript
+  opentext
+	writetext IcePathMattAfterText
 	waitbutton
 	closetext
-	winlosstext IcePathB1fMattWinText, 0
+  end
+  
+.IcePathMattBattleScript:
+  special FadeOutMusic
+  playmusic MUSIC_HIKER_ENCOUNTER
+  faceplayer
+	opentext
+	writetext IcePathMattBeforeText
+	waitbutton
+	closetext
+	winlosstext IcePathMattWinText, 0
 	loadtrainer STRONGMAN, MATT3
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext IcePathB1fMattAfterText
+	writetext IcePathMattAfterText
 	waitbutton
 	closetext
-	applymovement ICEPATH1F_MATT, IcePathB1fMattBattleExitMovement
+	setevent EVENT_STRONGMAN_MATT_3; remove matt from ice cave
 	setevent EVENT_STRONGMAN_MATT_2; remove matt from burned tower and route 29
-	disappear ICEPATH1F_MATT
-	setscene SCENE_ICE_PATH_B1F_NOOP
-	waitsfx
+	playmapmusic
 	end
 
-IcePathB1fMattBattleApproachMovement:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step_end
+IcePath1FHitmonchan:
+	cry HITMONCHAN
+	opentext
+	writetext IcePathHitmonchanText
+	waitbutton
+	closetext
+	end
 
-IcePathB1fMattBattleExitMovement:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
+IcePathHitmonchanText:
+  text "HITMONCHAN: PUNCH"
+	line "PUNCH"
+	done
 
-IcePathB1fMattBeforeText:
+IcePathMattBeforeText:
 	text "MATT: Hey you"
 	line "came for training?"
 
 	para "It's chilly in"
-	line "there."
+	line "there. Even with"
+  cont "YOUTH POWER."
 
 	para "A fight will"
 	line "help against"
@@ -71,7 +67,7 @@ IcePathB1fMattBeforeText:
 
   done
 
-IcePathB1fMattWinText:
+IcePathMattWinText:
 	text "What a fight!"
 
 	para "And we can't"
@@ -80,7 +76,7 @@ IcePathB1fMattWinText:
 
 	done
 
-IcePathB1fMattAfterText:
+IcePathMattAfterText:
 	text "You are a strong"
 	line "trainer."
 
@@ -120,7 +116,6 @@ IcePath1F_MapEvents:
 	warp_event 37, 13, ICE_PATH_B1F, 7
 
 	def_coord_events
-	coord_event 6, 14, SCENE_ICE_PATH_B1F_MATT_BATTLE, IcePathB1fMattBattleScene
 
 	def_bg_events
 
@@ -128,4 +123,5 @@ IcePath1F_MapEvents:
 	object_event 31,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FHMWaterfall, EVENT_GOT_HM07_WATERFALL
 	object_event 32, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FPPUp, EVENT_ICE_PATH_1F_PP_UP
 	object_event 35,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FProtein, EVENT_ICE_PATH_1F_PROTEIN
-  object_event 11, 14, SPRITE_STRONGMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_STRONGMAN_MATT_3
+  object_event 10, 15, SPRITE_STRONGMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathMatt, EVENT_STRONGMAN_MATT_3
+  object_event 11, 15, SPRITE_HITMONCHAN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IcePath1FHitmonchan, EVENT_STRONGMAN_MATT_3

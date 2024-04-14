@@ -17,13 +17,23 @@ OlivineLighthouse6FNoop1Scene:
 OlivineLighthouse6FNoop2Scene:
 	end
 
-OlivineLighthouse6FDoctorPhilScene:
-  applymovement PLAYER, OlivineLighthouse6F_EnterMovement
-	turnobject PLAYER, UP
-	appear OLIVINELIGHTHOUSE6F_DOCTOR_PHIL
-	applymovement OLIVINELIGHTHOUSE6F_DOCTOR_PHIL, OlivineLighthouse6FDoctorPhilApproachMovement
+OlivineLighthouse6FDoctorPhil:
   opentext
-	writetext OlivineLighthouse6FDoctorPhilText
+	writetext OlivineLighthouse6FDoctorPhilAmpharosText
+	waitbutton
+	closetext
+  end
+
+OlivineLighthouseJasmine:
+	faceplayer
+	checkitem SECRETPOTION
+	iftrue .BroughtSecretpotion
+	checkevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS
+	iftrue .ExplainedSickness
+  showemote EMOTE_SHOCK, OLIVINELIGHTHOUSE6F_DOCTOR_PHIL, 15
+  turnobject OLIVINELIGHTHOUSE6F_DOCTOR_PHIL, LEFT
+	opentext
+  writetext OlivineLighthouse6FDoctorPhilText
 	waitbutton
 	closetext
 	applymovement OLIVINELIGHTHOUSE6F_DOCTOR_PHIL, OlivineLighthouse6FDoctorPhilExitMovement
@@ -33,25 +43,19 @@ OlivineLighthouse6FDoctorPhilScene:
   clearevent EVENT_DOCTOR_PHIL_5 ; appear at secret potion
 	setscene SCENE_OLIVINE_LIGHTHOUSE_6F_NOOP
 	waitsfx
-  end
-
-OlivineLighthouseJasmine:
-	faceplayer
 	opentext
-	checkitem SECRETPOTION
-	iftrue .BroughtSecretpotion
-	checkevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS
-	iftrue .ExplainedSickness
 	writetext JasmineCianwoodPharmacyText
 	promptbutton
 	setevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS
 .ExplainedSickness:
+	opentext
 	writetext JasmineGetSomeMedicineText
 	waitbutton
 	closetext
 	end
 
 .BroughtSecretpotion:
+	opentext
 	writetext JasmineCureAmphyText
 	yesorno
 	iffalse .Refused
@@ -178,17 +182,6 @@ OlivineLighthouseJasmineLeavesRightMovement:
 	step_sleep 8
 	step_end
 
-OlivineLighthouse6F_EnterMovement:
-	step LEFT
-	step_end
-
-OlivineLighthouse6FDoctorPhilApproachMovement:
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
 OlivineLighthouse6FDoctorPhilExitMovement:
 	step DOWN
 	step DOWN
@@ -207,8 +200,8 @@ JasmineCianwoodPharmacyText:
 	line "got sick… It's"
 	cont "gasping for air…"
 
-	para "…I understand"
-	line "that there is a"
+	para "…The doctor told"
+	line "me that there is a"
 
 	para "wonderful PHARMACY"
 	line "in CIANWOOD…"
@@ -292,22 +285,25 @@ AmphyPaluPaluluText:
 	line "Palulu!"
 	done
 
-OlivineLighthouse6FDoctorPhilText:
-	text "DR PHIL: Move!"
-	line "I need to go to"
-	cont "CIANWOOD."
+OlivineLighthouse6FDoctorPhilAmpharosText:
+  text "DR PHIL: Hmmmmmm"
+  done
 
-  text "I heard they have"
+OlivineLighthouse6FDoctorPhilText:
+	text "DR PHIL: I need"
+	line "to go to CIANWOOD."
+
+  para "I heard they have"
 	line "a SECRETPOTION."
 
-  text "If i can study"
+  para "If i can study"
 	line "it..."
 
-  text "Yes we could"
+  para "Yes we could"
 	line "cure both"
 	cont "AMPHAROS..."
 
-  text "No time to"
+  para "No time to"
 	line "waste. CIANWOOD"
 	cont "here i come!"
 
@@ -322,7 +318,6 @@ OlivineLighthouse6F_MapEvents:
 	warp_event 17,  5, OLIVINE_LIGHTHOUSE_5F, 7
 
 	def_coord_events
-	coord_event  9, 15, SCENE_OLIVINE_LIGHTHOUSE_6F_DOCTOR_PHIL_ENCOUNTER, OlivineLighthouse6FDoctorPhilScene
 
 	def_bg_events
 
@@ -330,4 +325,4 @@ OlivineLighthouse6F_MapEvents:
 	object_event  8,  8, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseJasmine, EVENT_OLIVINE_LIGHTHOUSE_JASMINE
 	object_event  9,  8, SPRITE_AMPHAROS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, -1
 	object_event  3,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse6FSuperPotion, EVENT_OLIVINE_LIGHTHOUSE_6F_SUPER_POTION
-	object_event  8, 10, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DOCTOR_PHIL_4
+	object_event  9,  9, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineLighthouse6FDoctorPhil, EVENT_DOCTOR_PHIL_4

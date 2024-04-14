@@ -186,9 +186,9 @@ BlackthornCityMartSign:
 
 BlackthornGuideHugoScript:
   faceplayer
-	opentext
 	checkevent EVENT_BEAT_GUIDE_HUGO_BLACKTHORN
 	iftrue .FightDone
+	opentext
 	writetext BlackthornGuideHugoBeforeFightText
 	waitbutton
   yesorno

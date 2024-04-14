@@ -42,9 +42,9 @@ AzaleaTownFlypointCallback:
 
 AzaleaGuideHugoScript:
   faceplayer
-	opentext
 	checkevent EVENT_BEAT_GUIDE_HUGO_AZALEA
 	iftrue .FightDone
+	opentext
 	writetext AzaleaGuideHugoBeforeFightText
 	waitbutton
   yesorno
@@ -70,6 +70,8 @@ AzaleaTownDoctorPhilScene:
 	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
+  special FadeOutMusic
+  playmusic MUSIC_HIKER_ENCOUNTER
 	appear AZALEATOWN_DOCTOR_PHIL
 	applymovement AZALEATOWN_DOCTOR_PHIL, AzaleaTownDoctorPhilBattleApproachMovement
 
@@ -81,13 +83,17 @@ AzaleaTownDoctorPhilBattleScript:
   showemote EMOTE_SHOCK, PLAYER, 15
   showemote EMOTE_SHOCK, AZALEATOWN_DOCTOR_PHIL, 15
 	pause 15
+	opentext
 	writetext AzaleaTownDoctorPhilBeforeText2
 	waitbutton
 	closetext
 	winlosstext AzaleaTownDoctorPhilWinText, 0
+	setevent EVENT_DOCTOR_PHIL_2
 	loadtrainer DOCTOR, PHIL1
 	startbattle
+	dontrestartmapmusic
 	reloadmapafterbattle
+  playmusic MUSIC_HIKER_ENCOUNTER
 	opentext
 	writetext AzaleaTownDoctorPhilAfterText
 	waitbutton
@@ -97,6 +103,8 @@ AzaleaTownDoctorPhilBattleScript:
 	disappear AZALEATOWN_DOCTOR_PHIL
 	setscene SCENE_AZALEATOWN_NOOP
 	waitsfx
+	pause 15
+	playmapmusic
 	end
 
 AzaleaTownRivalBattleScene1:
@@ -544,7 +552,7 @@ AzaleaTownIlexForestSignText:
 
 	para "I heard"
 	line "SLOWPOKETAIL have"
-	line "medical properties"
+	cont "medical properties"
 
 	para "I need one to"
 	line "experi..."
@@ -672,5 +680,5 @@ AzaleaTown_MapEvents:
 	object_event 11, 10, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_AZALEA_TOWN
 	object_event 10, 16, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownRocket2Script, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  6,  5, SPRITE_KURT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownKurtScript, EVENT_AZALEA_TOWN_KURT
-	object_event 31, 10, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DOCTOR_PHIL_2
-	object_event 17,  9, SPRITE_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaGuideHugoScript, -1
+	object_event 31, 14, SPRITE_DOCTOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DOCTOR_PHIL_2
+	object_event 18,  9, SPRITE_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaGuideHugoScript, -1

@@ -165,9 +165,9 @@ OlivineCityPlayerStepsAsideBottomMovement:
 
 OlivineGuideHugoScript:
   faceplayer
-	opentext
 	checkevent EVENT_BEAT_GUIDE_HUGO_OLIVINE
 	iftrue .FightDone
+	opentext
 	writetext OlivineGuideHugoBeforeFightText
 	waitbutton
   yesorno

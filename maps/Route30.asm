@@ -223,12 +223,15 @@ Route30YoungsterScript:
 	end
 
 Route30DoctorPhilScript:
+  faceplayer
+	opentext
   writetext Route30DoctorPhilText1
 	waitbutton
 	closetext
   showemote EMOTE_SHOCK, PLAYER, 15
   showemote EMOTE_SHOCK, ROUTE30_DOCTOR_PHIL, 15
 	pause 15
+	opentext
   writetext Route30DoctorPhilText2
 	waitbutton
 	closetext
