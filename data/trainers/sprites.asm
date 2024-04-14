@@ -72,4 +72,5 @@ BTTrainerClassSprites:
   db SPRITE_STRONGMAN
   db SPRITE_DOCTOR
   db SPRITE_GUIDE
+  db SPRITE_PROF
   assert_table_length NUM_TRAINER_CLASSES

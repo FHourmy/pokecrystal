@@ -714,6 +714,7 @@ ShinyhunterPic:      INCBIN "gfx/trainers/shinyhunter.2bpp.lz"
 StrongmanPic:        INCBIN "gfx/trainers/strongman.2bpp.lz"
 DoctorPic:           INCBIN "gfx/trainers/doctor.2bpp.lz"
 GuidePic:            INCBIN "gfx/trainers/guide.2bpp.lz"
+ProfPic:             INCBIN "gfx/trainers/prof.2bpp.lz"
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
 
 

@@ -74,4 +74,5 @@ BTTrainerClassGenders:
   db MALE   ; STRONGMAN
   db MALE   ; DOCTOR
   db MALE   ; GUIDE
+  db FEMALE ; PROF
   assert_table_length NUM_TRAINER_CLASSES

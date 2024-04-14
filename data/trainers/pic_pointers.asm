@@ -74,4 +74,5 @@ TrainerPicPointers::
 	dba StrongmanPic
 	dba DoctorPic
 	dba GuidePic
+	dba ProfPic
 	assert_table_length NUM_TRAINER_CLASSES

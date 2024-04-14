@@ -75,4 +75,5 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; STRONGMAN
 	db MUSIC_HIKER_ENCOUNTER       ; DOCTOR
 	db MUSIC_HIKER_ENCOUNTER       ; GUIDE
+	db MUSIC_LASS_ENCOUNTER        ; PROF
 	assert_table_length NUM_TRAINER_CLASSES + 1

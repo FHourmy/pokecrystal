@@ -73,4 +73,5 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; STRONGMAN
 	dn  9,  8,  8,  8 ; DOCTOR
 	dn  9,  8,  8,  8 ; GUIDE
+	dn  9,  8,  8,  8 ; PROF
 	assert_table_length NUM_TRAINER_CLASSES

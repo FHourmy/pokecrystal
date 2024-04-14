@@ -108,6 +108,7 @@
 	const SPRITE_STRONGMAN ; 68
 	const SPRITE_DOCTOR ; 69
 	const SPRITE_GUIDE ; 70
+	const SPRITE_PROF ; 70
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

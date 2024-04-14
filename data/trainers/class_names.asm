@@ -72,4 +72,5 @@ TrainerClassNames::
 	li "STRONGMAN"
 	li "DOCTOR"
 	li "GUIDE"
+	li "PROF"
 	assert_list_length NUM_TRAINER_CLASSES

@@ -298,8 +298,8 @@ SproutTowerSignText:
 	done
 
 EarlsPokemonAcademySignText:
-	text "EARL'S #MON"
-	line "ACADEMY"
+	text "JULIETTE'S"
+	line "#MON ACADEMY"
 	done
 
 VioletGuideHugoBeforeFightText:
@@ -328,7 +328,14 @@ VioletGuideHugoBeatenText:
 	done
 
 VioletGuideHugoAfterFightText:
-	text "I heard some weird"
+  text "there is a new"
+	line "PROF at the"
+	cont "Violet Academy,"
+
+  para "You should go"
+	line "see her."
+
+	para "I heard some weird"
 	line "doctor is on"
 	cont "Route 30."
 

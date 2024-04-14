@@ -74,4 +74,5 @@ TrainerGroups:
 	dba StrongmanGroup
 	dba DoctorGroup
 	dba GuideGroup
+	dba ProfGroup
 	assert_table_length NUM_TRAINER_CLASSES

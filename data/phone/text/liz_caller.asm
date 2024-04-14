@@ -119,9 +119,9 @@ LizEarlGossipText:
 	text "Listen, listen!"
 
 	para "Do you know EARL,"
-	line "the teacher who"
+	line "a teacher working"
 
-	para "runs the #MON"
+	para "at the #MON"
 	line "ACADEMY in VIOLET?"
 
 	para "I saw him doing"

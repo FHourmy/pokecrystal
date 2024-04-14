@@ -113,4 +113,5 @@ OverworldSprites:
   overworld_sprite StrongmanSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
   overworld_sprite DoctorSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
   overworld_sprite GuideSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+  overworld_sprite ProfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	assert_table_length NUM_OVERWORLD_SPRITES

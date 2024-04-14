@@ -731,5 +731,7 @@ DEF KRIS EQU __trainer_class__
   const HUGO7
   const HUGO8
   const HUGO9
+  trainerclass PROF ; 47
+  const JULIETTE1
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
